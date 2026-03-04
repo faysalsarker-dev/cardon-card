@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 const HeroSection = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
     const video = videoRef.current;
@@ -45,7 +44,7 @@ const HeroSection = () => {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden">
+    <section ref={sectionRef} className="relative w-full max-w-7xl mx-auto overflow-hidden">
       <div className="h-screen w-full flex flex-col items-center justify-center text-center px-6 relative">
         <video
           ref={videoRef}

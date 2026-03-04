@@ -1,4 +1,5 @@
 import HomePage from "@/pages/home/HomePage";
+import HowItWork from "@/pages/howItWork/HowItWork";
 
 const routes = [
 
@@ -7,10 +8,15 @@ const routes = [
     path: "/",
     name: "Home",
   },
+  {
+    Component: HowItWork,
+    path: "/how-it-work",
+    name: "howItWorks",
+  },
 
 
 ]
 
 
 
-export default routes;
+export default routes; 
