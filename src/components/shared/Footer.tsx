@@ -3,9 +3,9 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className="mt-33 pt-24 pb-13 bg-background">
-      <div className=" mx-auto">
-        <div className="w-full flex flex-col lg:flex-row justify-between items-center lg:items-start text-center lg:text-left pb-25.5 border-b border-border/15 gap-8 lg:gap-12">
+    <footer className="mt-34 pt-6  pb-13 bg-background">
+      <div className=" max-w-7xl mx-auto">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-center lg:items-start text-center lg:text-left pb-25.5 border-b border-border/15 gap-6 lg:gap-8">
           <div className="mb-10 lg:mb-0">
             <Link to="/" className="h-9.25 w-42.5 max-w-[167.3px] block">
               <Logo />
@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="flex lg:flex-col gap-7.5 lg:gap-12">
+          <div className="flex lg:flex-col gap-2 lg:gap-4">
             <a title="Tiktok" target="_blank" href="https://www.tiktok.com/@carboncoskins" className="opacity-50 transition-opacity duration-400 hover:opacity-100 block lg:mt-0 lg:not-first:mt-12.5" rel="noreferrer">
               <img src="/src/assets/images/social_tiktok.svg" alt="Tiktok" />
             </a>
@@ -65,7 +65,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end w-full pt-13.75 pr-0 lg:pr-7 gap-5 lg:gap-0">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end w-full pt-8 pr-0 lg:pr-7 gap-5 lg:gap-0">
           <div className="text-base leading-4 tracking-[0.01em] capitalize text-muted-foreground/80">
             © 2026 carbonCoskins. All rights reserved.
           </div>
