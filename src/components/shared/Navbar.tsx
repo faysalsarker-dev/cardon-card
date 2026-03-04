@@ -19,10 +19,10 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-100">
+    <header className="fixed left-0 right-0 top-0 z-100 max-w-7xl mx-auto">
       <div className={cn(
         "w-full h-full pt-18.5 pb-5 transition-all duration-400",
-        isScrolled ? "bg-black/90" : "bg-transparent"
+        isScrolled ? "bg-black/5" : "bg-transparent"
       )}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-end relative z-20">
