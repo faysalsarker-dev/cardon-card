@@ -5,16 +5,14 @@ export default function DesignMyOwn() {
   return (
     <div className="bg-background text-primary min-h-screen pt-36 pb-24">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-10">
-          Design My Own
-        </h1>
+        
 
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_1.1fr)_minmax(0,_1fr)] gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] gap-10 lg:gap-16 items-start">
           {/* Left: Card preview */}
           <div className="flex flex-col items-center gap-8">
             <div className="w-full max-w-xl bg-[#111111] rounded-2xl px-8 py-10 shadow-[0_30px_80px_rgba(0,0,0,0.7)]">
               <div className="flex flex-col gap-10">
-                <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-black relative">
+                <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black relative">
                   <img
                     src={cardFront}
                     alt="Card front preview"
@@ -22,7 +20,7 @@ export default function DesignMyOwn() {
                   />
                 </div>
 
-                <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden bg-black relative">
+                <div className="w-full aspect-video rounded-2xl overflow-hidden bg-black relative">
                   <img
                     src={cardBack}
                     alt="Card back preview"
