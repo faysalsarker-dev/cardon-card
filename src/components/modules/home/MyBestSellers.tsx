@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import arrowPrev from "@/assets/images/prev.svg";
 import arrowNext from "@/assets/images/next.svg";
@@ -6,38 +6,58 @@ import bclubRb from "@/assets/images/bclub-rb.webp";
 import mclubG from "@/assets/images/mclub-g.webp";
 import blackImg from "@/assets/images/black.webp";
 import silverImg from "@/assets/images/silver.webp";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const cards = [
   { id: 0, title: "Millionaire Card", image: bclubRb, buttonLabel: "ADD TO CART" },
   { id: 1, title: "Royal King", image: mclubG, buttonLabel: "ADD TO CART" },
   { id: 2, title: "Black Edition", image: blackImg, buttonLabel: "ADD TO CART" },
   { id: 3, title: "Silver Edition", image: silverImg, buttonLabel: "ADD TO CART" },
+  { id: 4, title: "Silver Edition 2", image: mclubG, buttonLabel: "ADD TO CART" },
+  { id: 5, title: "Silver Edition 3", image: bclubRb, buttonLabel: "ADD TO CART" },
+  { id: 6, title: "Silver Edition 4", image: silverImg, buttonLabel: "ADD TO CART" },
 ];
 
 export default function MyBestSellers() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const goNext = () => activeIndex < cards.length - 1 && setActiveIndex(activeIndex + 1);
   const goPrev = () => activeIndex > 0 && setActiveIndex(activeIndex - 1);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 50) goNext();
+    if (touchEndX.current - touchStartX.current > 50) goPrev();
+  };
+
   const activeCard = cards[activeIndex];
 
-  const getRelativeIndex = (index: number) => {
-    const offset = index - activeIndex;
-    if (offset === 0) return 0;
-    if (offset === 1) return 1;
-    if (offset === -1) return -1;
-    return 99;
-  };
+  const getRelativeIndex = (index: number) => index - activeIndex;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section className="py-32 md:py-40 bg-black">
       <div className="mx-auto">
         <div className="w-full text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white">
+          <h2 className="text-[45px] md:text-6xl lg:text-7xl font-bold text-white">
             Best Sellers
           </h2>
-          <p className="mt-3 text-sm md:text-base text-white/70">
+          <p className="mt-4 md:mt-6 text-[18px] md:text-[21px] text-white font-medium md:w-full w-[45%] mx-auto">
             Select one of our Best Sellers, add your name and checkout!
           </p>
         </div>
@@ -49,9 +69,10 @@ export default function MyBestSellers() {
             onClick={goPrev}
             disabled={activeIndex === 0}
             aria-label="Previous card"
-            className="hidden md:inline-flex absolute left-4 top-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 w-10 h-10 hover:bg-white/10 transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="hidden md:inline-flex absolute left-1/2 -translate-x-[390px] top-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-colors z-20 disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            <img src={arrowPrev} alt="Previous" className="w-4 h-4" />
+
+            <ChevronLeft size={64} strokeWidth={0.75} />
           </button>
 
           <button
@@ -59,23 +80,62 @@ export default function MyBestSellers() {
             onClick={goNext}
             disabled={activeIndex === cards.length - 1}
             aria-label="Next card"
-            className="hidden md:inline-flex absolute right-4 top-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 w-10 h-10 hover:bg-white/10 transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="hidden md:inline-flex absolute left-1/2 translate-x-[340px] top-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-colors z-20 disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            <img src={arrowNext} alt="Next" className="w-4 h-4" />
+            <ChevronRight size={64} strokeWidth={0.75} />
           </button>
 
-          <div className="overflow-hidden">
-            <div className="relative h-[600px] flex items-center justify-center">
+          <div className="overflow-hidden" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+            <div className="relative h-45 md:h-75 flex items-center justify-center">
               {cards.map((card, index) => {
                 const rel = getRelativeIndex(index);
-                const isHidden = rel === 99;
+                const isVisible = Math.abs(rel) <= 1;
+
+                // let translateX = 0;
+                // let scale = 1;
+                // let opacity = 1;
+
+                // if (rel === -1) {
+                //   translateX = -142;
+                //   scale = 0.80;
+                //   opacity = 0.6;
+                // } else if (rel === 1) {
+                //   translateX = 142;
+                //   scale = 0.80;
+                //   opacity = 0.6;
+                // } else if (rel < -1) {
+                //   translateX = -200;
+                //   scale = 0.7;
+                //   opacity = 0;
+                // } else if (rel > 1) {
+                //   translateX = 200;
+                //   scale = 0.7;
+                //   opacity = 0;
+                // }
 
                 let translateX = 0;
-                if (rel === -1) translateX = -120;
-                if (rel === 1) translateX = 120;
+                let scale = 1;
+                let opacity = 1;
 
-                const scale = rel === 0 ? 1 : 0.85;
-                const opacity = isHidden ? 0 : rel === 0 ? 1 : 0.6;
+                if (rel === -1) {
+                  translateX = -142;
+                  scale = isMobile ? 0.95 : 0.80;
+                  opacity = 0.6;
+                } else if (rel === 1) {
+                  translateX = 142;
+                  scale = isMobile ? 0.95 : 0.80;
+                  opacity = 0.6;
+                } else if (rel === 0) {
+                  scale = isMobile ? 1.40 : 1;
+                } else if (rel < -1) {
+                  translateX = -200;
+                  scale = 0.7;
+                  opacity = 0;
+                } else if (rel > 1) {
+                  translateX = 200;
+                  scale = 0.7;
+                  opacity = 0;
+                }
 
                 return (
                   <div
@@ -85,17 +145,23 @@ export default function MyBestSellers() {
                     style={{
                       transform: `translateX(calc(-50% + ${translateX}%)) scale(${scale})`,
                       opacity,
-                      transition: "all 500ms ease-in-out",
-                      pointerEvents: isHidden ? "none" : "auto",
+                      transition: "transform 500ms ease-in-out, opacity 500ms ease-in-out",
+                      pointerEvents: rel === 0 ? "auto" : "none",
                       zIndex: rel === 0 ? 2 : 1,
                     }}
                   >
-                    <div className="max-w-[480px] rounded-2xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.9)] bg-black/40">
-                      <img
-                        src={card.image}
-                        alt={card.title}
-                        className="w-full h-auto block"
-                      />
+                    <div className="max-w-125 rounded-2xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.9)] bg-black/40">
+                      {index === cards.length - 1 ? (
+                        <div className="md:w-125 w-52.5 h-32 md:h-75 border py-2 border-gray-700/70 rounded-2xl flex justify-center items-center">
+                          <a className="md:text-4xl text-xl text-white font-bold cursor-pointer" href="/best-sellers">View More</a>
+                        </div>
+                      ) : (
+                        <img
+                          src={card.image}
+                          alt={card.title}
+                          className="w-full h-auto block"
+                        />
+                      )}
                     </div>
                   </div>
                 );
@@ -111,9 +177,8 @@ export default function MyBestSellers() {
               key={card.id}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`h-1.5 rounded-full transition-all ${
-                index === activeIndex ? "w-8 bg-white" : "w-2 bg-white/40"
-              }`}
+              className={`h-1.5 rounded-full transition-all ${index === activeIndex ? "w-8 bg-white" : "w-2 bg-white/40"
+                }`}
             />
           ))}
         </div>
@@ -123,7 +188,7 @@ export default function MyBestSellers() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full px-10 py-6 text-base font-medium border-white/80 text-white hover:bg-white hover:text-black"
+            className="rounded-full px-7 pt-7 pb-8 text-2xl font-medium border-2 border-white/80 text-white hover:bg-white hover:text-black"
           >
             {activeCard.buttonLabel}
           </Button>
