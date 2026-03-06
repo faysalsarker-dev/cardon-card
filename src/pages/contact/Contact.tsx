@@ -15,7 +15,7 @@ export default function App() {
         </header>
 
         {/* Contact Info Grid */}
-        <div className="flex flex-col md:flex-row justify-start items-center gap-6 md:gap-20 lg:gap-40 md:ml-10 mb-8 md:mb-16">
+        <div className="flex flex-col md:flex-row justify-start items-center gap-6 md:gap-20 lg:gap-40 md:ml-10 mb-8 md:mb-30">
           <div className="text-center">
             <h2 className="text-xl md:text-3xl lg:text-3xl font-medium mb-2 md:mb-4">Phone</h2>
             <p className="text-neutral-600 text-base md:text-lg lg:text-xl font-semibold">+61 450 596 920</p>
@@ -59,7 +59,7 @@ export default function App() {
                 id="message"
                 placeholder="Message*"
                 rows={1}
-                className="w-full bg-transparent border-b border-zinc-800 py-2 md:py-4 focus:outline-none focus:border-white transition-colors placeholder:text-zinc-600 text-base md:text-lg resize-none overflow-hidden"
+                className="w-full bg-transparent border-b border-zinc-800 py-2 md:py-6 focus:outline-none focus:border-white transition-colors placeholder:text-zinc-600 text-base md:text-lg resize-none overflow-hidden"
                 required
                 onInput={(e) => {
                   const target = e.target as HTMLTextAreaElement;
