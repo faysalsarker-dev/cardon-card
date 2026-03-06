@@ -1,96 +1,85 @@
-import React from "react";
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
 
-export default function Contact() {
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-  };
 
+
+export default function App() {
   return (
-    <div className="bg-black text-white font-['Inter',sans-serif] min-h-screen py-24">
-      <div className="max-w-140 mx-auto px-4">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
+      <div className="max-w-6xl mx-auto px-3 md:px-6 py-10 md:py-20">
         {/* Header */}
-        <h1 className="text-[38px] font-black text-center mb-10 tracking-tight">
-          Contact Us
-        </h1>
+        <header className="text-center mb-10 md:mb-20">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl mt-4 md:mt-10 font-bold tracking-tight">Contact Us</h1>
+        </header>
 
-        {/* Top contact details */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-center gap-10 mb-12">
-          <div className="text-center md:text-left">
-            <p className="text-[13px] font-bold text-[#999] uppercase tracking-[0.2em] mb-2">
-              Phone
-            </p>
-            <p className="text-[15px] text-white">
-              <a href="tel:+61450596920" className="hover:underline">
-                +61 450 596 920
-              </a>
-            </p>
+        {/* Contact Info Grid */}
+        <div className="flex flex-col md:flex-row justify-start items-center gap-6 md:gap-20 lg:gap-40 md:ml-10 mb-8 md:mb-16">
+          <div className="text-center">
+            <h2 className="text-xl md:text-3xl lg:text-3xl font-medium mb-2 md:mb-4">Phone</h2>
+            <p className="text-neutral-600 text-base md:text-lg lg:text-xl font-semibold">+61 450 596 920</p>
           </div>
-
-          <div className="text-center md:text-left">
-            <p className="text-[13px] font-bold text-[#999] uppercase tracking-[0.2em] mb-2">
-              Email
-            </p>
-            <p className="text-[15px] text-white break-all">
-              <a
-                href="mailto:info@carboncoskins.com"
-                className="hover:underline"
-              >
-                info@carboncoskins.com
-              </a>
-            </p>
+          <div className="text-center">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-medium mb-2 md:mb-4">Email</h2>
+            <p className="text-neutral-600 text-base md:text-lg lg:text-xl font-semibold">info@carboncoskins.com</p>
           </div>
         </div>
 
-        <div className="border-t border-[#2a2a2a] mb-10" />
+        {/* Divider */}
+        <div className="border-t border-zinc-800/80 mb-8 md:mb-16"></div>
 
-        {/* Form */}
-        <div className="max-w-xl mx-auto">
-          <h2 className="text-[20px] font-semibold mb-6">Get In Touch</h2>
-
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label className="block text-[13px] text-[#999] mb-2">
-                Your Name*
-              </label>
+        {/* Form Section */}
+        <div className="max-w-2xl w-full">
+          <h2 className="text-2xl md:text-4xl font-medium mb-6 md:mb-12">Get In Touch</h2>
+          
+          <form className="space-y-6 md:space-y-12" onSubmit={(e) => e.preventDefault()}>
+            <div className="relative">
               <input
                 type="text"
+                id="name"
+                placeholder="Your Name*"
+                className="w-full bg-transparent border-b border-zinc-800 py-2 md:py-4 focus:outline-none focus:border-white transition-colors placeholder:text-zinc-600 text-base md:text-lg"
                 required
-                className="w-full bg-black border-b border-white/20 text-[14px] py-3 outline-none focus:border-white transition-colors"
               />
             </div>
 
-            <div>
-              <label className="block text-[13px] text-[#999] mb-2">
-                Email Address*
-              </label>
+            <div className="relative">
               <input
                 type="email"
+                id="email"
+                placeholder="Email Address*"
+                className="w-full bg-transparent border-b border-zinc-800 py-2 md:py-4 focus:outline-none focus:border-white transition-colors placeholder:text-zinc-600 text-base md:text-lg"
                 required
-                className="w-full bg-black border-b border-white/20 text-[14px] py-3 outline-none focus:border-white transition-colors"
               />
             </div>
 
-            <div>
-              <label className="block text-[13px] text-[#999] mb-2">
-                Message*
-              </label>
+            <div className="relative">
               <textarea
+                id="message"
+                placeholder="Message*"
+                rows={1}
+                className="w-full bg-transparent border-b border-zinc-800 py-2 md:py-4 focus:outline-none focus:border-white transition-colors placeholder:text-zinc-600 text-base md:text-lg resize-none overflow-hidden"
                 required
-                rows={4}
-                className="w-full bg-black border-b border-white/20 text-[14px] py-3 outline-none resize-none focus:border-white transition-colors"
+                onInput={(e) => {
+                  const target = e.target as HTMLTextAreaElement;
+                  target.style.height = 'auto';
+                  target.style.height = `${target.scrollHeight}px`;
+                }}
               />
             </div>
 
-            <button
-              type="submit"
-              className="mt-4 inline-flex items-center justify-center px-8 py-2.5 border border-white rounded-full text-[13px] tracking-[0.18em] uppercase hover:bg-white hover:text-black transition-colors"
-            >
-              Send
-            </button>
+            <div className="pt-4 md:pt-8">
+              <button
+                type="submit"
+                className="px-6 md:px-10 py-2 md:py-3 border border-white rounded-full text-white hover:bg-white hover:text-black transition-all duration-300 text-base md:text-lg font-medium active:scale-95"
+              >
+                Send
+              </button>
+            </div>
           </form>
         </div>
       </div>
     </div>
   );
 }
-

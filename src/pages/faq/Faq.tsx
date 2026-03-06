@@ -105,9 +105,9 @@ const AccordionItem = ({ item, isOpen, onClick }: AccordionItemProps) => {
     }`}>
       <button
         onClick={onClick}
-        className="w-full px-6 py-5 flex items-center  justify-between text-left transition-colors  cursor-pointer"
+        className="w-full px-3 md:px-6 py-3 md:py-5 flex items-center justify-between text-left transition-colors cursor-pointer"
       >
-        <span className="text-[24px] font-medium text-white/90">{item.question}</span>
+        <span className="text-base md:text-lg lg:text-[24px] font-medium text-white/90">{item.question}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
@@ -123,7 +123,7 @@ const AccordionItem = ({ item, isOpen, onClick }: AccordionItemProps) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
           >
-            <div className="px-6 pb-6 text-[20px] leading-relaxed text-white/60">
+            <div className="px-3 md:px-6 pb-4 md:pb-6 text-sm md:text-base lg:text-[20px] leading-relaxed text-white/60">
               {item.answer}
             </div>
           </motion.div>
@@ -191,11 +191,11 @@ export default function App() {
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-white/20">
       {/* Header */}
-      <header className="pt-24 pb-10 px-6 text-center">
+      <header className="pt-12 md:pt-24 pb-6 md:pb-10 px-6 text-center">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-7xl mt-10 font-bold tracking-tight mb-4"
+          className="text-3xl md:text-5xl lg:text-7xl mt-4 md:mt-10 font-bold tracking-tight mb-2 md:mb-4"
         >
           Frequently Asked Questions
         </motion.h1>
@@ -203,7 +203,7 @@ export default function App() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-white/50 text-sm md:text-[21px] pt-2 flex items-center justify-center gap-2"
+          className="text-white/50 text-xs md:text-sm lg:text-[21px] pt-1 md:pt-2 flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2"
         >
           If your questions are not covered below, email us at{' '}
           <a 
@@ -215,9 +215,9 @@ export default function App() {
         </motion.p>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 pb-16 flex flex-col md:flex-row gap-12 md:gap-24 relative">
+      <main className="max-w-6xl mx-auto px-3 md:px-6 pb-16 flex flex-col md:flex-row gap-6 md:gap-12 lg:gap-24 relative">
         {/* Sidebar Navigation */}
-        <aside className="md:w-64 shrink-0">
+        <aside className="hidden md:block md:w-64 shrink-0">
           <nav className="sticky top-12 space-y-1 relative">
             <div className="absolute left-0  top-0 bottom-0 w-1 bg-white/20" />
             {FAQ_DATA.map((category) => (
@@ -245,7 +245,7 @@ export default function App() {
         </aside>
 
         {/* FAQ Content */}
-        <div className="grow space-y-10">
+        <div className="w-full md:w-auto space-y-10">
           {FAQ_DATA.map((category) => (
             <section 
               key={category.id} 
@@ -253,7 +253,7 @@ export default function App() {
               ref={(el) => { sectionRefs.current[category.id] = el; }}
               className="scroll-mt-24"
             >
-              <h2 className="text-4xl font-bold mb-8 tracking-tight">{category.title}</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-8 tracking-tight">{category.title}</h2>
               <div className="space-y-1">
                 {category.items.map((item, index) => (
                   <AccordionItem
