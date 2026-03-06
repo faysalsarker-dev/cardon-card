@@ -2,6 +2,7 @@ import HomePage from "@/pages/home/HomePage";
 import HowItWork from "@/pages/howItWork/HowItWork";
 import Contact from "@/pages/contact/Contact";
 import DesignMyOwn from "@/pages/design/DesignMyOwn";
+import Faq from "@/pages/faq/Faq";
 
 const routes = [
   {
@@ -28,6 +29,11 @@ const routes = [
     Component: DesignMyOwn,
     path: "/order",
     name: "designYourOwnOrder",
+  },
+  {
+    Component: Faq,
+    path: "/faq",
+    name: "faq",
   },
 ];
 
