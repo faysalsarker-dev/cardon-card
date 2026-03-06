@@ -69,7 +69,7 @@ export default function MyBestSellers() {
             onClick={goPrev}
             disabled={activeIndex === 0}
             aria-label="Previous card"
-            className="hidden md:inline-flex absolute left-1/2 -translate-x-[390px] top-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-colors z-20 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="hidden md:inline-flex cursor-pointer absolute left-1/2 -translate-x-97.5 top-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-colors z-20 disabled:opacity-30 disabled:cursor-not-allowed"
           >
 
             <ChevronLeft size={64} strokeWidth={0.75} />
@@ -80,7 +80,7 @@ export default function MyBestSellers() {
             onClick={goNext}
             disabled={activeIndex === cards.length - 1}
             aria-label="Next card"
-            className="hidden md:inline-flex absolute left-1/2 translate-x-[340px] top-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-colors z-20 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="hidden md:inline-flex cursor-pointer absolute left-1/2 translate-x-85 top-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-colors z-20 disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <ChevronRight size={64} strokeWidth={0.75} />
           </button>
