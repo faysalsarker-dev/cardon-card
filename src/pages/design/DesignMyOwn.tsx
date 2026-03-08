@@ -1,5 +1,5 @@
-import cardFront from "@/assets/images/card2.png";
-import cardBack from "@/assets/images/card2.png";
+import cardFront from "@/assets/images/card2.webp";
+import cardBack from "@/assets/images/card2.webp";
 
 export default function DesignMyOwn() {
   return (

@@ -25,7 +25,7 @@ const features: Feature[] = [
 const FinancialSafety = () => {
   return (
     <section className="pt-32 lg:pt-20 pb-32 lg:pb-20 w-full bg-black">
-      <div className=" mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="w-full flex flex-col items-center justify-center">
           <h2 className="text-5xl lg:text-7xl font-bold text-white mb-4">Financial Safety</h2>
           <p className="text-xl lg:text-lg text-white/70 mb-14">Your financial safety is our priority.</p>

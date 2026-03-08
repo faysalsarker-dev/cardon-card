@@ -1,6 +1,4 @@
 import { useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,56 +23,59 @@ const HeroSection = () => {
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: "+=200%", // Scroll distance (more % = slower playback)
-        pin: true,     // Keeps the section stuck while video plays
-        scrub: 1,      // Smoothly catches up to scroll position (removes jitter)
+        end: "+=100%",
+        pin: true,
+        scrub: 1,
         anticipatePin: 1,
       },
     });
 
-    // Animate the video time
+    // Animate the video time and text/buttons simultaneously
     tl.to(video, {
       currentTime: video.duration || 1,
       ease: "none",
-    });
+      duration: 1,
+    }, 0);
 
-    // Optional: Fade out text as video finishes
-    tl.to(".hero-content", { opacity: 0, y: -50, ease: "power1.inOut" }, 0.5);
+    tl.to(".hero-content", { y: -600, ease: "none", duration: 1 }, 0);
 
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="relative w-full max-w-7xl mx-auto overflow-hidden">
-      <div className="h-screen w-full flex flex-col items-center justify-center text-center px-6 relative">
+    <section ref={sectionRef} className="relative w-full max-w-7xl mx-auto overflow-hidden mb-8">
+
+      <div className="h-screen w-full flex flex-col items-center justify-end text-center px-6 relative">
+
         <video
           ref={videoRef}
           src="/heroVideo.mp4"
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover -z-10 "
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+          style={{ width: "1080px", height: "700px", margin: "0 auto" }}
         />
-        
+
         {/* Content Wrapper for animation */}
-        <div className="hero-content z-10 flex flex-col items-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-4xl mb-8 text-white">
-            Contactless Metal <br /> Credit & Debit Cards
+        <div className="hero-content z-10 flex flex-col items-center pb-16">
+
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-7xl mb-8 text-white text-center">
+            Contactless Metal Credit & Debit Cards
           </h1>
-          
+
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="rounded-full px-8 py-6 text-base font-medium">
+            <button className="px-5 py-4 rounded-full text-black text-3xl bg-white">
               Design Your Own
-            </Button>
-            <Button variant="outline" className="rounded-full px-8 py-6 text-base font-medium text-white border-white hover:bg-white hover:text-black">
+            </button>
+
+            <button className="px-5 py-4 rounded-full text-white text-3xl border border-white hover:bg-white hover:text-black">
               Pre-made designs
-            </Button>
+            </button>
           </div>
         </div>
 
-        <div className="absolute bottom-10 animate-bounce">
-          <ChevronDown className="h-6 w-6 text-white/70" />
-        </div>
       </div>
+
     </section>
   );
 };
