@@ -6,6 +6,7 @@ import bclubRb from "@/assets/images/bclub-rb.webp";
 import mclubG from "@/assets/images/mclub-g.webp";
 import blackImg from "@/assets/images/black.webp";
 import silverImg from "@/assets/images/silver.webp";
+import circuit from "@/assets/images/circuit.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const cards = [
@@ -156,11 +157,18 @@ export default function MyBestSellers() {
                           <a className="md:text-4xl text-xl text-white font-bold cursor-pointer" href="/best-sellers">View More</a>
                         </div>
                       ) : (
-                        <img
-                          src={card.image}
-                          alt={card.title}
-                          className="w-full h-auto block"
-                        />
+                        <div className="relative">
+                          <img
+                            src={card.image}
+                            alt={card.title}
+                            className="w-full h-auto block"
+                          />
+                          <img 
+                            src={circuit} 
+                            alt="" 
+                            className="absolute left-10 top-1/2 -translate-y-1/2 w-20 h-14"
+                          />
+                        </div>
                       )}
                     </div>
                   </div>
