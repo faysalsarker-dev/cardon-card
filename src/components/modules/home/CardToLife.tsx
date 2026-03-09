@@ -63,7 +63,7 @@ export default function CardComesToLife() {
   const step = steps[activeStep];
 
   return (
-    <section className="py-20 md:py-20 bg-black" ref={sectionRef}>
+    <section className="py-20 md:pt-20 md:pb-26 bg-black" ref={sectionRef}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');`}</style>
       <div className="w-full max-w-325 mx-auto px-10 grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-20 items-center">
 

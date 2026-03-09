@@ -135,7 +135,7 @@ export default function MyBestSellers() {
                           <img 
                             src={circuit} 
                             alt="" 
-                            className="absolute left-10 top-1/2 -translate-y-1/2 w-20 h-14"
+                            className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 w-10 h-6 md:w-20 md:h-14"
                           />
                         </div>
                       )}
