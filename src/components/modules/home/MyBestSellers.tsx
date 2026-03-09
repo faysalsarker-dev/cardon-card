@@ -1,13 +1,11 @@
-import { useState, useRef, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import arrowPrev from "@/assets/images/prev.svg";
-import arrowNext from "@/assets/images/next.svg";
+import { useState, useEffect } from "react";
 import bclubRb from "@/assets/images/bclub-rb.webp";
 import mclubG from "@/assets/images/mclub-g.webp";
 import blackImg from "@/assets/images/black.webp";
 import silverImg from "@/assets/images/silver.webp";
 import circuit from "@/assets/images/circuit.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const cards = [
   { id: 0, title: "Millionaire Card", image: bclubRb, buttonLabel: "ADD TO CART" },
@@ -21,29 +19,23 @@ const cards = [
 
 export default function MyBestSellers() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  let touchStartX = 0;
 
   const goNext = () => activeIndex < cards.length - 1 && setActiveIndex(activeIndex + 1);
   const goPrev = () => activeIndex > 0 && setActiveIndex(activeIndex - 1);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+    touchStartX = e.touches[0].clientX;
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    if (touchStartX - touchEndX > 50) goNext();
+    if (touchEndX - touchStartX > 50) goPrev();
   };
-
-  const handleTouchEnd = () => {
-    if (touchStartX.current - touchEndX.current > 50) goNext();
-    if (touchEndX.current - touchStartX.current > 50) goPrev();
-  };
-
-  const activeCard = cards[activeIndex];
 
   const getRelativeIndex = (index: number) => index - activeIndex;
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -52,7 +44,7 @@ export default function MyBestSellers() {
   }, []);
 
   return (
-    <section className="py-32 md:py-40 bg-black">
+    <section className="py-24 md:pt-20 md:pb-30 bg-black">
       <div className="mx-auto">
         <div className="w-full text-center">
           <h2 className="text-[45px] md:text-6xl lg:text-7xl font-bold text-white">
@@ -86,33 +78,10 @@ export default function MyBestSellers() {
             <ChevronRight size={64} strokeWidth={0.75} />
           </button>
 
-          <div className="overflow-hidden" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+          <div className="overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
             <div className="relative h-45 md:h-75 flex items-center justify-center">
               {cards.map((card, index) => {
                 const rel = getRelativeIndex(index);
-                const isVisible = Math.abs(rel) <= 1;
-
-                // let translateX = 0;
-                // let scale = 1;
-                // let opacity = 1;
-
-                // if (rel === -1) {
-                //   translateX = -142;
-                //   scale = 0.80;
-                //   opacity = 0.6;
-                // } else if (rel === 1) {
-                //   translateX = 142;
-                //   scale = 0.80;
-                //   opacity = 0.6;
-                // } else if (rel < -1) {
-                //   translateX = -200;
-                //   scale = 0.7;
-                //   opacity = 0;
-                // } else if (rel > 1) {
-                //   translateX = 200;
-                //   scale = 0.7;
-                //   opacity = 0;
-                // }
 
                 let translateX = 0;
                 let scale = 1;
@@ -198,7 +167,7 @@ export default function MyBestSellers() {
             variant="outline"
             className="rounded-full px-7 pt-7 pb-8 text-2xl font-medium border-2 border-white/80 text-white hover:bg-white hover:text-black"
           >
-            {activeCard.buttonLabel}
+            {cards[activeIndex].buttonLabel}
           </Button>
         </div>
       </div>

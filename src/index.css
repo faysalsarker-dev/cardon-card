@@ -121,4 +121,10 @@
   body {
     @apply bg-background text-foreground;
     }
+  .font-dm-sans {
+    font-family: 'DM Sans', sans-serif;
+  }
+  .font-bebas-neue {
+    font-family: 'Bebas Neue', sans-serif;
+  }
 }
