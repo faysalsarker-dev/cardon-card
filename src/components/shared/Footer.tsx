@@ -18,8 +18,8 @@ const Footer = () => {
               <div className="flex justify-start items-start flex-col min-w-45">
                 <h4 className="font-bold text-2xl leading-8 text-primary">Our services</h4>
                 <ul className="mt-10">
-                  <li className="mb-6 last:mb-0"><Link to="/how-it-works" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">How it works</Link></li>
-                  <li className="mb-6 last:mb-0"><Link to="/best-sellers" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Best sellers</Link></li>
+                  <li className="mb-6 last:mb-0"><Link to="/how-it-work" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">How it works</Link></li>
+                  <li className="mb-6 last:mb-0"><a href="/best-sellers" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Best sellers</a></li>
                   <li className="mb-6 last:mb-0"><Link to="/order" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Design Your Own</Link></li>
                 </ul>
               </div>
@@ -28,16 +28,16 @@ const Footer = () => {
                 <h4 className="font-bold text-2xl leading-8 text-primary">About us</h4>
                 <ul className="mt-10">
                   <li className="mb-6 last:mb-0"><Link to="/faq" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">FAQ</Link></li>
-                  <li className="mb-6 last:mb-0"><Link to="/terms-and-conditions#privacy" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Privacy policy</Link></li>
-                  <li className="mb-6 last:mb-0"><Link to="/terms-and-conditions" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Terms & conditions</Link></li>
+                  <li className="mb-6 last:mb-0"><a href="/terms-and-conditions#privacy" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Privacy policy</a></li>
+                  <li className="mb-6 last:mb-0"><a href="/terms-and-conditions" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Terms & conditions</a></li>
                 </ul>
               </div>
             </div>
             
             <div className="flex lg:hidden justify-start items-start flex-col min-w-45 mb-5">
               <ul className="mt-10">
-                <li className="mb-6 last:mb-0"><Link to="/how-it-works" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">How it works</Link></li>
-                <li className="mb-6 last:mb-0"><Link to="/best-sellers" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Best sellers</Link></li>
+                <li className="mb-6 last:mb-0"><Link to="/how-it-work" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">How it works</Link></li>
+                <li className="mb-6 last:mb-0"><a href="/best-sellers" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Best sellers</a></li>
                 <li className="mb-6 last:mb-0"><Link to="/order" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Design Your Own</Link></li>
                 <li className="mb-6 last:mb-0"><Link to="/faq" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">FAQ</Link></li>
               </ul>
@@ -72,8 +72,8 @@ const Footer = () => {
           
           <div className="flex lg:hidden">
             <ul>
-              <li className="mb-6 last:mb-0"><Link to="/terms-and-conditions" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Terms & conditions</Link></li>
-              <li className="mb-6 last:mb-0"><Link to="/terms-and-conditions#privacy" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Privacy policy</Link></li>
+              <li className="mb-6 last:mb-0"><a href="/terms-and-conditions" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Terms & conditions</a></li>
+              <li className="mb-6 last:mb-0"><a href="/terms-and-conditions#privacy" className="block text-base leading-6 text-muted-foreground hover:text-primary transition-colors duration-300">Privacy policy</a></li>
             </ul>
           </div>
           
