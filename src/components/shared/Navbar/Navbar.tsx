@@ -43,7 +43,7 @@ function Navbar() {
             <div className="container hidden_menu__container">
               <ul className="menu__list -opacity_hover">
                 <li><Link to="/order" onClick={closeMenu}>Design My Own</Link></li>
-                <li><a href="/best-sellers/" onClick={closeMenu}>Pre-made designs</a></li>
+                <li><Link to="/best-sellers" onClick={closeMenu}>Pre-made designs</Link></li>
                 <li><Link to="/how-it-work" onClick={closeMenu}>How it works</Link></li>
                 <li><Link to="/support" onClick={closeMenu}>Contact</Link></li>
                 <li><Link to="/faq" onClick={closeMenu}>FAQ</Link></li>
