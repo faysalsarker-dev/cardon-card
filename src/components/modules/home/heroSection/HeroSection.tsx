@@ -1,10 +1,24 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './HeroSection.css';
 
 function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => setIsReady(true);
+    video.addEventListener('canplay', handleCanPlay);
+    video.preload = 'metadata';
+
+    return () => video.removeEventListener('canplay', handleCanPlay);
+  }, []);
+
+  useEffect(() => {
+    if (!isReady) return;
+
     const handleScroll = () => {
       if (!videoRef.current) return;
 
@@ -18,7 +32,7 @@ function HeroSection() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isReady]);
 
   return (
     <section className="main_section">
