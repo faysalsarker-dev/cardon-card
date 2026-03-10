@@ -3,6 +3,7 @@ import HowItWork from "@/pages/howItWork/HowItWork";
 import Contact from "@/pages/contact/Contact";
 import DesignMyOwn from "@/pages/design/DesignMyOwn";
 import Faq from "@/pages/faq/Faq";
+import BestSellers from "@/pages/bestSellers/BestSellers";
 
 const routes = [
   {
@@ -34,6 +35,11 @@ const routes = [
     Component: Faq,
     path: "/faq",
     name: "faq",
+  },
+  {
+    Component: BestSellers,
+    path: "/best-sellers",
+    name: "bestSellers",
   },
 ];
 
