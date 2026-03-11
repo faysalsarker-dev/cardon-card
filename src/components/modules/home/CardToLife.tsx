@@ -40,15 +40,14 @@ export default function CardComesToLife() {
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const windowH = window.innerHeight;
-      // progress: 0 when top of section hits bottom of viewport, 1 when bottom of section hits top
       const total = rect.height + windowH;
       const gone = windowH - rect.top;
       const p = Math.min(Math.max(gone / total, 0), 1);
       setScrollProgress(p);
       setActiveStep(Math.min(Math.floor(p * steps.length), steps.length - 1));
       
-      if (videoRef.current && videoRef.current.duration) {
-        videoRef.current.currentTime = Math.min(p * videoRef.current.duration, videoRef.current.duration);
+      if (videoRef.current) {
+        videoRef.current.currentTime = p * (videoRef.current.duration || 0);
       }
     };
 
