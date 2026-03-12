@@ -22,6 +22,27 @@ import { motion, AnimatePresence } from 'motion/react';
 import circuitImg from '../../assets/images/circuit.png';
 import productsData from '../data/products.json';
 
+// Dynamically import all images from cardImages folder
+const imageModules = import.meta.glob('../../assets/cardImages/*.webp', { eager: true });
+
+// Create a mapping of filename to image path
+const imageMap: Record<string, string> = {};
+Object.entries(imageModules).forEach(([path, module]) => {
+  const filename = path.split('/').pop() || '';
+  imageMap[filename] = (module as { default: string }).default;
+});
+
+// Dynamically import all color images
+const colorImageModules = import.meta.glob('../../assets/colorsImages/*', { eager: true });
+
+// Create a mapping of color name to image path
+const colorImageMap: Record<string, string> = {};
+Object.entries(colorImageModules).forEach(([path, module]) => {
+  const filename = path.split('/').pop() || '';
+  const colorName = filename.split('.')[0]; // Remove extension
+  colorImageMap[colorName] = (module as { default: string }).default;
+});
+
 
 // Mapping icon names to components
 const IconMap: Record<string, any> = {
@@ -172,19 +193,19 @@ export default function BestSellers() {
                     </h3>
                   </div>
                   
-                  {/* Color Filter Mockup */}
+                  {/* Color Filter */}
                   <div className="flex gap-1.5">
-                    {['gold', 'silver', 'rose', 'black', 'holo'].map((color) => (
+                    {['gold', 'silver', 'rose', 'black', 'rainbow', 'blackgold'].map((color) => (
                       <div 
                         key={color} 
-                        className={`w-4 h-4 rounded-full border border-white/10 cursor-pointer hover:scale-110 transition-transform ${
-                          color === 'gold' ? 'bg-yellow-500' :
-                          color === 'silver' ? 'bg-gray-400' :
-                          color === 'rose' ? 'bg-rose-400' :
-                          color === 'black' ? 'bg-zinc-800' :
-                          'bg-linear-to-tr from-blue-400 via-purple-400 to-pink-400'
-                        }`}
-                      />
+                        className="w-10 h-10 rounded-full border border-white/10 cursor-pointer hover:scale-110 transition-transform overflow-hidden"
+                      >
+                        <img 
+                          src={colorImageMap[color]} 
+                          alt={color}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -204,7 +225,7 @@ export default function BestSellers() {
                       >
                         {/* Background Image with Opacity on Hover */}
                         <img 
-                          src={item.image} 
+                          src={imageMap[item.image]} 
                           alt={item.title}
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover opacity-90 group-hover:opacity-50 transition-all duration-500"

@@ -23,7 +23,7 @@
       "count": 12,
       "icon": "Star",
       "items": [
-        { "id": "ss1", "title": "Aries", "image": "Property-1Black-min-2_webp_cache_50.webp", "color": "black" },
+        { "id": "ss1", "title": "Aries", "image": "Property-1Gold-min-6_webp_cache_50.webp", "color": "black" },
         { "id": "ss2", "title": "Taurus", "image": "Property-1Iridance-min-31_webp_cache_50.webp", "color": "holo" },
         { "id": "ss3", "title": "Gemini", "image": "Property-1Rose-min_webp_cache_50.webp", "color": "rose" },
         { "id": "ss4", "title": "Cancer", "image": "Property-1Black-min-6_webp_cache_50.webp", "color": "black" },
