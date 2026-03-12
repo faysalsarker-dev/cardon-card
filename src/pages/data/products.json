@@ -1,0 +1,173 @@
+{
+  "categories": [
+    {
+      "id": "anime",
+      "name": "Anime",
+      "count": 21,
+      "icon": "Ghost",
+      "items": [
+        { "id": "a1", "title": "Zero Two", "image": "https://picsum.photos/seed/anime1/400/250", "color": "gold" },
+        { "id": "a2", "title": "Cyberpunk", "image": "https://picsum.photos/seed/anime2/400/250", "color": "holo" },
+        { "id": "a3", "title": "Goku Gold", "image": "https://picsum.photos/seed/anime3/400/250", "color": "gold" },
+        { "id": "a4", "title": "Dragon Ball", "image": "https://picsum.photos/seed/anime4/400/250", "color": "gold" },
+        { "id": "a5", "title": "Naruto", "image": "https://picsum.photos/seed/anime5/400/250", "color": "silver" },
+        { "id": "a6", "title": "Starlight", "image": "https://picsum.photos/seed/anime6/400/250", "color": "rose" },
+        { "id": "a7", "title": "One Piece", "image": "https://picsum.photos/seed/anime7/400/250", "color": "gold" },
+        { "id": "a8", "title": "Attack on Titan", "image": "https://picsum.photos/seed/anime8/400/250", "color": "silver" },
+        { "id": "a9", "title": "Death Note", "image": "https://picsum.photos/seed/anime9/400/250", "color": "black" }
+      ]
+    },
+    {
+      "id": "high-rollers",
+      "name": "High Rollers",
+      "count": 9,
+      "icon": "Dices",
+      "items": [
+        { "id": "hr1", "title": "4 of a Kind", "image": "https://picsum.photos/seed/hr1/400/250", "color": "holo" },
+        { "id": "hr2", "title": "Ace of Spades", "image": "https://picsum.photos/seed/hr2/400/250", "color": "silver" },
+        { "id": "hr3", "title": "Golden Dice", "image": "https://picsum.photos/seed/hr3/400/250", "color": "gold" },
+        { "id": "hr4", "title": "Royal Flush", "image": "https://picsum.photos/seed/hr4/400/250", "color": "silver" },
+        { "id": "hr5", "title": "Joker Gold", "image": "https://picsum.photos/seed/hr5/400/250", "color": "gold" },
+        { "id": "hr6", "title": "King of Hearts", "image": "https://picsum.photos/seed/hr6/400/250", "color": "holo" },
+        { "id": "hr7", "title": "Poker Night", "image": "https://picsum.photos/seed/hr7/400/250", "color": "black" },
+        { "id": "hr8", "title": "Casino", "image": "https://picsum.photos/seed/hr8/400/250", "color": "gold" },
+        { "id": "hr9", "title": "Jackpot", "image": "https://picsum.photos/seed/hr9/400/250", "color": "silver" }
+      ]
+    },
+    {
+      "id": "star-signs",
+      "name": "Star Signs",
+      "count": 12,
+      "icon": "Star",
+      "items": [
+        { "id": "ss1", "title": "Aries", "image": "https://picsum.photos/seed/ss1/400/250", "color": "black" },
+        { "id": "ss2", "title": "Taurus", "image": "https://picsum.photos/seed/ss2/400/250", "color": "holo" },
+        { "id": "ss3", "title": "Gemini", "image": "https://picsum.photos/seed/ss3/400/250", "color": "rose" },
+        { "id": "ss4", "title": "Cancer", "image": "https://picsum.photos/seed/ss4/400/250", "color": "black" },
+        { "id": "ss5", "title": "Leo", "image": "https://picsum.photos/seed/ss5/400/250", "color": "silver" },
+        { "id": "ss6", "title": "Virgo", "image": "https://picsum.photos/seed/ss6/400/250", "color": "gold" },
+        { "id": "ss7", "title": "Libra", "image": "https://picsum.photos/seed/ss7/400/250", "color": "black" },
+        { "id": "ss8", "title": "Scorpio", "image": "https://picsum.photos/seed/ss8/400/250", "color": "holo" }
+      ]
+    },
+    {
+      "id": "misc",
+      "name": "Misc",
+      "count": 14,
+      "icon": "LayoutGrid",
+      "items": [
+        { "id": "m1", "title": "Abstract", "image": "https://picsum.photos/seed/m1/400/250", "color": "silver" },
+        { "id": "m2", "title": "Agent Chamber", "image": "https://picsum.photos/seed/m2/400/250", "color": "gold" },
+        { "id": "m3", "title": "Eye of Horus", "image": "https://picsum.photos/seed/m3/400/250", "color": "black" },
+        { "id": "m4", "title": "Skull", "image": "https://picsum.photos/seed/m4/400/250", "color": "rose" },
+        { "id": "m5", "title": "Clean Money", "image": "https://picsum.photos/seed/m5/400/250", "color": "silver" },
+        { "id": "m6", "title": "Landscape", "image": "https://picsum.photos/seed/m6/400/250", "color": "black" },
+        { "id": "m7", "title": "Geometric", "image": "https://picsum.photos/seed/m7/400/250", "color": "gold" },
+        { "id": "m8", "title": "Minimal", "image": "https://picsum.photos/seed/m8/400/250", "color": "holo" }
+      ]
+    },
+    {
+      "id": "music",
+      "name": "Music",
+      "count": 8,
+      "icon": "Music",
+      "items": [
+        { "id": "mu1", "title": "Rapper", "image": "https://picsum.photos/seed/mu1/400/250", "color": "black" },
+        { "id": "mu2", "title": "BTS", "image": "https://picsum.photos/seed/mu2/400/250", "color": "silver" },
+        { "id": "mu3", "title": "Quote", "image": "https://picsum.photos/seed/mu3/400/250", "color": "holo" },
+        { "id": "mu4", "title": "Moosewala", "image": "https://picsum.photos/seed/mu4/400/250", "color": "rose" },
+        { "id": "mu5", "title": "Post Malone", "image": "https://picsum.photos/seed/mu5/400/250", "color": "gold" },
+        { "id": "mu6", "title": "Legends Never Die", "image": "https://picsum.photos/seed/mu6/400/250", "color": "black" },
+        { "id": "mu7", "title": "Vinyl", "image": "https://picsum.photos/seed/mu7/400/250", "color": "gold" },
+        { "id": "mu8", "title": "Cassette", "image": "https://picsum.photos/seed/mu8/400/250", "color": "silver" }
+      ]
+    },
+    {
+      "id": "exclusive",
+      "name": "Exclusive",
+      "count": 10,
+      "icon": "Crown",
+      "items": [
+        { "id": "e1", "title": "Billionaire Club", "image": "https://picsum.photos/seed/e1/400/250", "color": "silver" },
+        { "id": "e2", "title": "Crown Holo", "image": "https://picsum.photos/seed/e2/400/250", "color": "holo" },
+        { "id": "e3", "title": "World Map", "image": "https://picsum.photos/seed/e3/400/250", "color": "gold" },
+        { "id": "e4", "title": "Hustler", "image": "https://picsum.photos/seed/e4/400/250", "color": "holo" },
+        { "id": "e5", "title": "Members Club", "image": "https://picsum.photos/seed/e5/400/250", "color": "silver" },
+        { "id": "e6", "title": "Millionaire", "image": "https://picsum.photos/seed/e6/400/250", "color": "holo" },
+        { "id": "e7", "title": "Prestige", "image": "https://picsum.photos/seed/e7/400/250", "color": "gold" },
+        { "id": "e8", "title": "Elite", "image": "https://picsum.photos/seed/e8/400/250", "color": "black" }
+      ]
+    },
+    {
+      "id": "crypto",
+      "name": "Crypto",
+      "count": 7,
+      "icon": "Bitcoin",
+      "items": [
+        { "id": "c1", "title": "Bitcoin Rose", "image": "https://picsum.photos/seed/c1/400/250", "color": "rose" },
+        { "id": "c2", "title": "Cardano", "image": "https://picsum.photos/seed/c2/400/250", "color": "holo" },
+        { "id": "c3", "title": "Pattern", "image": "https://picsum.photos/seed/c3/400/250", "color": "rose" },
+        { "id": "c4", "title": "In Crypto We Trust", "image": "https://picsum.photos/seed/c4/400/250", "color": "silver" },
+        { "id": "c5", "title": "Dogecoin", "image": "https://picsum.photos/seed/c5/400/250", "color": "gold" },
+        { "id": "c6", "title": "Ethereum", "image": "https://picsum.photos/seed/c6/400/250", "color": "rose" },
+        { "id": "c7", "title": "Solana", "image": "https://picsum.photos/seed/c7/400/250", "color": "holo" }
+      ]
+    },
+    {
+      "id": "animals",
+      "name": "Animals",
+      "count": 7,
+      "icon": "PawPrint",
+      "items": [
+        { "id": "an1", "title": "Tiger", "image": "https://picsum.photos/seed/an1/400/250", "color": "holo" },
+        { "id": "an2", "title": "Bear", "image": "https://picsum.photos/seed/an2/400/250", "color": "rose" },
+        { "id": "an3", "title": "Koi Fish", "image": "https://picsum.photos/seed/an3/400/250", "color": "silver" },
+        { "id": "an4", "title": "Lion", "image": "https://picsum.photos/seed/an4/400/250", "color": "holo" },
+        { "id": "an5", "title": "Pitbull", "image": "https://picsum.photos/seed/an5/400/250", "color": "gold" },
+        { "id": "an6", "title": "Shark", "image": "https://picsum.photos/seed/an6/400/250", "color": "holo" },
+        { "id": "an7", "title": "Wolf", "image": "https://picsum.photos/seed/an7/400/250", "color": "silver" }
+      ]
+    },
+    {
+      "id": "skylines",
+      "name": "Skylines",
+      "count": 6,
+      "icon": "Building2",
+      "items": [
+        { "id": "sk1", "title": "Chicago", "image": "https://picsum.photos/seed/sk1/400/250", "color": "gold" },
+        { "id": "sk2", "title": "Dubai", "image": "https://picsum.photos/seed/sk2/400/250", "color": "silver" },
+        { "id": "sk3", "title": "London", "image": "https://picsum.photos/seed/sk3/400/250", "color": "silver" },
+        { "id": "sk4", "title": "New York", "image": "https://picsum.photos/seed/sk4/400/250", "color": "gold" },
+        { "id": "sk5", "title": "San Francisco", "image": "https://picsum.photos/seed/sk5/400/250", "color": "rose" },
+        { "id": "sk6", "title": "Sydney", "image": "https://picsum.photos/seed/sk6/400/250", "color": "gold" }
+      ]
+    },
+    {
+      "id": "sport",
+      "name": "Sport",
+      "count": 5,
+      "icon": "Trophy",
+      "items": [
+        { "id": "sp1", "title": "Curry", "image": "https://picsum.photos/seed/sp1/400/250", "color": "gold" },
+        { "id": "sp2", "title": "Kobe", "image": "https://picsum.photos/seed/sp2/400/250", "color": "silver" },
+        { "id": "sp3", "title": "Champion", "image": "https://picsum.photos/seed/sp3/400/250", "color": "black" },
+        { "id": "sp4", "title": "Jordan", "image": "https://picsum.photos/seed/sp4/400/250", "color": "holo" },
+        { "id": "sp5", "title": "Boxing", "image": "https://picsum.photos/seed/sp5/400/250", "color": "black" }
+      ]
+    },
+    {
+      "id": "street-art",
+      "name": "Street Art",
+      "count": 6,
+      "icon": "Palette",
+      "items": [
+        { "id": "sa1", "title": "Graffiti Gold", "image": "https://picsum.photos/seed/sa1/400/250", "color": "gold" },
+        { "id": "sa2", "title": "Monopoly", "image": "https://picsum.photos/seed/sa2/400/250", "color": "gold" },
+        { "id": "sa3", "title": "Rich Man", "image": "https://picsum.photos/seed/sa3/400/250", "color": "gold" },
+        { "id": "sa4", "title": "Hustle", "image": "https://picsum.photos/seed/sa4/400/250", "color": "gold" },
+        { "id": "sa5", "title": "Guns Rose", "image": "https://picsum.photos/seed/sa5/400/250", "color": "rose" },
+        { "id": "sa6", "title": "King Gold", "image": "https://picsum.photos/seed/sa6/400/250", "color": "gold" }
+      ]
+    }
+  ]
+}
