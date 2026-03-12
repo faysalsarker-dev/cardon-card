@@ -44,7 +44,7 @@ export default function MyBestSellers() {
   }, []);
 
   return (
-    <section className="py-24 md:pt-20 md:pb-30 bg-black">
+    <section className="pb-14 md:pt-20 md:pb-30 bg-black">
       <div className="mx-auto">
         <div className="w-full text-center">
           <h2 className="text-[45px] md:text-6xl lg:text-7xl font-bold text-white">

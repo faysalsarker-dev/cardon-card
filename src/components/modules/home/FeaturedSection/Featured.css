@@ -72,17 +72,21 @@
 
 @media (max-width: 768px) {
     .featured-section {
-        padding: 40px 0 60px;
+        padding: 40px 0 30px;
     }
 
     .featured-section-container {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
+        justify-content: space-between;
+        gap: 12px;
     }
 
     .featured-section-container-item {
-        flex: 0 0 45%;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .featured-section-container-item img {
+        max-width: 70px;
     }
 
     .featured-section-title {

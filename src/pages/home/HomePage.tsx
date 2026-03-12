@@ -1,5 +1,4 @@
 
-// import CardToLife from "@/components/modules/home/CardToLife";
 import MyBestSellers from "@/components/modules/home/MyBestSellers";
 import FinancialSafety from "@/components/modules/home/FinancialSafety";
 import HeroSection from "@/components/modules/home/heroSection/HeroSection";
@@ -12,8 +11,7 @@ export default function HomePage() {
     <div>
       <HeroSection />
       <FeaturedSection />
-  <CardLIfecycle></CardLIfecycle>
-      {/* <CardToLife /> */}
+      <CardLIfecycle />
       <MyBestSellers />
       <FinancialSafety />
     </div>
