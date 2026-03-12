@@ -145,12 +145,14 @@
 
 @media (max-width: 768px) {
     .main_section {
-        padding-top: 120px;
+        margin-top: 80px;
         height: 70vh;
     }
 
     .main_section_hero_video {
-        top: 10%;
+        top: 20%;
+    
+    
     }
 
     .title_1 {
