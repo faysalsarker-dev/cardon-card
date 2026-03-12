@@ -1,23 +1,6 @@
 {
   "categories": [
     {
-      "id": "anime",
-      "name": "Anime",
-      "count": 21,
-      "icon": "Ghost",
-      "items": [
-        { "id": "a1", "title": "Zero Two", "image": "https://picsum.photos/seed/anime1/400/250", "color": "gold" },
-        { "id": "a2", "title": "Cyberpunk", "image": "https://picsum.photos/seed/anime2/400/250", "color": "holo" },
-        { "id": "a3", "title": "Goku Gold", "image": "https://picsum.photos/seed/anime3/400/250", "color": "gold" },
-        { "id": "a4", "title": "Dragon Ball", "image": "https://picsum.photos/seed/anime4/400/250", "color": "gold" },
-        { "id": "a5", "title": "Naruto", "image": "https://picsum.photos/seed/anime5/400/250", "color": "silver" },
-        { "id": "a6", "title": "Starlight", "image": "https://picsum.photos/seed/anime6/400/250", "color": "rose" },
-        { "id": "a7", "title": "One Piece", "image": "https://picsum.photos/seed/anime7/400/250", "color": "gold" },
-        { "id": "a8", "title": "Attack on Titan", "image": "https://picsum.photos/seed/anime8/400/250", "color": "silver" },
-        { "id": "a9", "title": "Death Note", "image": "https://picsum.photos/seed/anime9/400/250", "color": "black" }
-      ]
-    },
-    {
       "id": "high-rollers",
       "name": "High Rollers",
       "count": 9,
@@ -54,7 +37,7 @@
       "id": "misc",
       "name": "Misc",
       "count": 14,
-      "icon": "LayoutGrid",
+      "icon": "MoreHorizontal",
       "items": [
         { "id": "m1", "title": "Abstract", "image": "https://picsum.photos/seed/m1/400/250", "color": "silver" },
         { "id": "m2", "title": "Agent Chamber", "image": "https://picsum.photos/seed/m2/400/250", "color": "gold" },
@@ -69,24 +52,22 @@
     {
       "id": "music",
       "name": "Music",
-      "count": 8,
-      "icon": "Music",
+      "count": 6,
+      "icon": "Headphones",
       "items": [
         { "id": "mu1", "title": "Rapper", "image": "https://picsum.photos/seed/mu1/400/250", "color": "black" },
         { "id": "mu2", "title": "BTS", "image": "https://picsum.photos/seed/mu2/400/250", "color": "silver" },
         { "id": "mu3", "title": "Quote", "image": "https://picsum.photos/seed/mu3/400/250", "color": "holo" },
         { "id": "mu4", "title": "Moosewala", "image": "https://picsum.photos/seed/mu4/400/250", "color": "rose" },
         { "id": "mu5", "title": "Post Malone", "image": "https://picsum.photos/seed/mu5/400/250", "color": "gold" },
-        { "id": "mu6", "title": "Legends Never Die", "image": "https://picsum.photos/seed/mu6/400/250", "color": "black" },
-        { "id": "mu7", "title": "Vinyl", "image": "https://picsum.photos/seed/mu7/400/250", "color": "gold" },
-        { "id": "mu8", "title": "Cassette", "image": "https://picsum.photos/seed/mu8/400/250", "color": "silver" }
+        { "id": "mu6", "title": "Legends Never Die", "image": "https://picsum.photos/seed/mu6/400/250", "color": "black" }
       ]
     },
     {
       "id": "exclusive",
       "name": "Exclusive",
       "count": 10,
-      "icon": "Crown",
+      "icon": "Gem",
       "items": [
         { "id": "e1", "title": "Billionaire Club", "image": "https://picsum.photos/seed/e1/400/250", "color": "silver" },
         { "id": "e2", "title": "Crown Holo", "image": "https://picsum.photos/seed/e2/400/250", "color": "holo" },
@@ -167,6 +148,17 @@
         { "id": "sa4", "title": "Hustle", "image": "https://picsum.photos/seed/sa4/400/250", "color": "gold" },
         { "id": "sa5", "title": "Guns Rose", "image": "https://picsum.photos/seed/sa5/400/250", "color": "rose" },
         { "id": "sa6", "title": "King Gold", "image": "https://picsum.photos/seed/sa6/400/250", "color": "gold" }
+      ]
+    },
+    {
+      "id": "movies",
+      "name": "Movies",
+      "count": 3,
+      "icon": "Play",
+      "items": [
+        { "id": "mo1", "title": "Rick & Morty", "image": "https://picsum.photos/seed/mo1/400/250", "color": "black" },
+        { "id": "mo2", "title": "Futurama", "image": "https://picsum.photos/seed/mo2/400/250", "color": "rose" },
+        { "id": "mo3", "title": "Squid Game", "image": "https://picsum.photos/seed/mo3/400/250", "color": "gold" }
       ]
     }
   ]
