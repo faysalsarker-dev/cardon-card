@@ -22,6 +22,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import circuitImg from '../../assets/images/circuit.png';
 import productsData from '../data/products.json';
 
+
 // Mapping icon names to components
 const IconMap: Record<string, any> = {
   Dices,

@@ -6,15 +6,15 @@
       "count": 9,
       "icon": "Dices",
       "items": [
-        { "id": "hr1", "title": "4 of a Kind", "image": "https://picsum.photos/seed/hr1/400/250", "color": "holo" },
-        { "id": "hr2", "title": "Ace of Spades", "image": "https://picsum.photos/seed/hr2/400/250", "color": "silver" },
-        { "id": "hr3", "title": "Golden Dice", "image": "https://picsum.photos/seed/hr3/400/250", "color": "gold" },
-        { "id": "hr4", "title": "Royal Flush", "image": "https://picsum.photos/seed/hr4/400/250", "color": "silver" },
-        { "id": "hr5", "title": "Joker Gold", "image": "https://picsum.photos/seed/hr5/400/250", "color": "gold" },
-        { "id": "hr6", "title": "King of Hearts", "image": "https://picsum.photos/seed/hr6/400/250", "color": "holo" },
-        { "id": "hr7", "title": "Poker Night", "image": "https://picsum.photos/seed/hr7/400/250", "color": "black" },
-        { "id": "hr8", "title": "Casino", "image": "https://picsum.photos/seed/hr8/400/250", "color": "gold" },
-        { "id": "hr9", "title": "Jackpot", "image": "https://picsum.photos/seed/hr9/400/250", "color": "silver" }
+        { "id": "hr1", "title": "4 of a Kind", "image": "Property-1Iridance-min-3_webp_cache_50.webp", "color": "holo" },
+        { "id": "hr2", "title": "Ace of Spades", "image": "ace-b_webp_cache_50.webp", "color": "silver" },
+        { "id": "hr3", "title": "Golden Dice", "image": "Property-1Gold-min_webp_cache_50.webp", "color": "gold" },
+        { "id": "hr4", "title": "Royal Flush", "image": "Property-1Silver-min_webp_cache_50.webp", "color": "silver" },
+        { "id": "hr5", "title": "Joker Gold", "image": "joker-bg-1_webp_cache_50.webp", "color": "gold" },
+        { "id": "hr6", "title": "King of Hearts", "image": "Property-1Iridance-min-8_webp_cache_50.webp", "color": "holo" },
+        { "id": "hr7", "title": "Poker Night", "image": "Property-1Black-min-11_webp_cache_50.webp", "color": "black" },
+        { "id": "hr8", "title": "Casino", "image": "Property-1Gold-min-6_webp_cache_50.webp", "color": "gold" },
+        { "id": "hr9", "title": "Jackpot", "image": "Property-1Silver-min-6_webp_cache_50.webp", "color": "silver" }
       ]
     },
     {
@@ -23,14 +23,14 @@
       "count": 12,
       "icon": "Star",
       "items": [
-        { "id": "ss1", "title": "Aries", "image": "https://picsum.photos/seed/ss1/400/250", "color": "black" },
-        { "id": "ss2", "title": "Taurus", "image": "https://picsum.photos/seed/ss2/400/250", "color": "holo" },
-        { "id": "ss3", "title": "Gemini", "image": "https://picsum.photos/seed/ss3/400/250", "color": "rose" },
-        { "id": "ss4", "title": "Cancer", "image": "https://picsum.photos/seed/ss4/400/250", "color": "black" },
-        { "id": "ss5", "title": "Leo", "image": "https://picsum.photos/seed/ss5/400/250", "color": "silver" },
-        { "id": "ss6", "title": "Virgo", "image": "https://picsum.photos/seed/ss6/400/250", "color": "gold" },
-        { "id": "ss7", "title": "Libra", "image": "https://picsum.photos/seed/ss7/400/250", "color": "black" },
-        { "id": "ss8", "title": "Scorpio", "image": "https://picsum.photos/seed/ss8/400/250", "color": "holo" }
+        { "id": "ss1", "title": "Aries", "image": "Property-1Black-min-2_webp_cache_50.webp", "color": "black" },
+        { "id": "ss2", "title": "Taurus", "image": "Property-1Iridance-min-31_webp_cache_50.webp", "color": "holo" },
+        { "id": "ss3", "title": "Gemini", "image": "Property-1Rose-min_webp_cache_50.webp", "color": "rose" },
+        { "id": "ss4", "title": "Cancer", "image": "Property-1Black-min-6_webp_cache_50.webp", "color": "black" },
+        { "id": "ss5", "title": "Leo", "image": "Property-1Silver-min-7_webp_cache_50.webp", "color": "silver" },
+        { "id": "ss6", "title": "Virgo", "image": "Property-1Gold-min-7-1_webp_cache_50.webp", "color": "gold" },
+        { "id": "ss7", "title": "Libra", "image": "Property-1Black-min-42_webp_cache_50.webp", "color": "black" },
+        { "id": "ss8", "title": "Scorpio", "image": "Property-1Iridance-min-38_webp_cache_50.webp", "color": "holo" }
       ]
     },
     {
@@ -39,14 +39,14 @@
       "count": 14,
       "icon": "MoreHorizontal",
       "items": [
-        { "id": "m1", "title": "Abstract", "image": "https://picsum.photos/seed/m1/400/250", "color": "silver" },
-        { "id": "m2", "title": "Agent Chamber", "image": "https://picsum.photos/seed/m2/400/250", "color": "gold" },
-        { "id": "m3", "title": "Eye of Horus", "image": "https://picsum.photos/seed/m3/400/250", "color": "black" },
-        { "id": "m4", "title": "Skull", "image": "https://picsum.photos/seed/m4/400/250", "color": "rose" },
-        { "id": "m5", "title": "Clean Money", "image": "https://picsum.photos/seed/m5/400/250", "color": "silver" },
-        { "id": "m6", "title": "Landscape", "image": "https://picsum.photos/seed/m6/400/250", "color": "black" },
-        { "id": "m7", "title": "Geometric", "image": "https://picsum.photos/seed/m7/400/250", "color": "gold" },
-        { "id": "m8", "title": "Minimal", "image": "https://picsum.photos/seed/m8/400/250", "color": "holo" }
+        { "id": "m1", "title": "Abstract", "image": "Property-1Silver-min-8_webp_cache_50.webp", "color": "silver" },
+        { "id": "m2", "title": "Agent Chamber", "image": "Property-1Gold-min-8_webp_cache_50.webp", "color": "gold" },
+        { "id": "m3", "title": "Eye of Horus", "image": "iyart-rb_webp_cache_50.webp", "color": "black" },
+        { "id": "m4", "title": "Skull", "image": "Property-1Rose-min-2_webp_cache_50.webp", "color": "rose" },
+        { "id": "m5", "title": "Clean Money", "image": "Property-1Silver-min-9_webp_cache_50.webp", "color": "silver" },
+        { "id": "m6", "title": "Landscape", "image": "Property-1Black-min-54_webp_cache_50.webp", "color": "black" },
+        { "id": "m7", "title": "Geometric", "image": "Property-1Gold-min-9_webp_cache_50.webp", "color": "gold" },
+        { "id": "m8", "title": "Minimal", "image": "Property-1Iridance-min-52_webp_cache_50.webp", "color": "holo" }
       ]
     },
     {
@@ -55,12 +55,12 @@
       "count": 6,
       "icon": "Headphones",
       "items": [
-        { "id": "mu1", "title": "Rapper", "image": "https://picsum.photos/seed/mu1/400/250", "color": "black" },
-        { "id": "mu2", "title": "BTS", "image": "https://picsum.photos/seed/mu2/400/250", "color": "silver" },
-        { "id": "mu3", "title": "Quote", "image": "https://picsum.photos/seed/mu3/400/250", "color": "holo" },
-        { "id": "mu4", "title": "Moosewala", "image": "https://picsum.photos/seed/mu4/400/250", "color": "rose" },
-        { "id": "mu5", "title": "Post Malone", "image": "https://picsum.photos/seed/mu5/400/250", "color": "gold" },
-        { "id": "mu6", "title": "Legends Never Die", "image": "https://picsum.photos/seed/mu6/400/250", "color": "black" }
+        { "id": "mu1", "title": "Rapper", "image": "Property-1Black-min-75_webp_cache_50.webp", "color": "black" },
+        { "id": "mu2", "title": "BTS", "image": "Property-1Silver-min-10_webp_cache_50.webp", "color": "silver" },
+        { "id": "mu3", "title": "Quote", "image": "Property-1Iridance-min-67_webp_cache_50.webp", "color": "holo" },
+        { "id": "mu4", "title": "Moosewala", "image": "Property-1Rose-min-6_webp_cache_50.webp", "color": "rose" },
+        { "id": "mu5", "title": "Post Malone", "image": "Property-1Gold-min-10_webp_cache_50.webp", "color": "gold" },
+        { "id": "mu6", "title": "Legends Never Die", "image": "Property-1Black-min-2021-12-27T175438-039_webp_cache_50.webp", "color": "black" }
       ]
     },
     {
@@ -69,14 +69,14 @@
       "count": 10,
       "icon": "Gem",
       "items": [
-        { "id": "e1", "title": "Billionaire Club", "image": "https://picsum.photos/seed/e1/400/250", "color": "silver" },
-        { "id": "e2", "title": "Crown Holo", "image": "https://picsum.photos/seed/e2/400/250", "color": "holo" },
-        { "id": "e3", "title": "World Map", "image": "https://picsum.photos/seed/e3/400/250", "color": "gold" },
-        { "id": "e4", "title": "Hustler", "image": "https://picsum.photos/seed/e4/400/250", "color": "holo" },
-        { "id": "e5", "title": "Members Club", "image": "https://picsum.photos/seed/e5/400/250", "color": "silver" },
-        { "id": "e6", "title": "Millionaire", "image": "https://picsum.photos/seed/e6/400/250", "color": "holo" },
-        { "id": "e7", "title": "Prestige", "image": "https://picsum.photos/seed/e7/400/250", "color": "gold" },
-        { "id": "e8", "title": "Elite", "image": "https://picsum.photos/seed/e8/400/250", "color": "black" }
+        { "id": "e1", "title": "Billionaire Club", "image": "Property-1Silver-min-11_webp_cache_50.webp", "color": "silver" },
+        { "id": "e2", "title": "Crown Holo", "image": "Property-1Iridance-min-70_webp_cache_50.webp", "color": "holo" },
+        { "id": "e3", "title": "World Map", "image": "Property-1Gold-min-11_webp_cache_50.webp", "color": "gold" },
+        { "id": "e4", "title": "Hustler", "image": "Property-1Iridance-min-76_webp_cache_50.webp", "color": "holo" },
+        { "id": "e5", "title": "Members Club", "image": "Property-1Silver-min-12_webp_cache_50.webp", "color": "silver" },
+        { "id": "e6", "title": "Millionaire", "image": "mclub-rb_webp_cache_50.webp", "color": "holo" },
+        { "id": "e7", "title": "Prestige", "image": "Property-1Gold-min-12_webp_cache_50.webp", "color": "gold" },
+        { "id": "e8", "title": "Elite", "image": "Property-1Black-min-2022-09-19T111430-961_webp_cache_50.webp", "color": "black" }
       ]
     },
     {
@@ -85,13 +85,13 @@
       "count": 7,
       "icon": "Bitcoin",
       "items": [
-        { "id": "c1", "title": "Bitcoin Rose", "image": "https://picsum.photos/seed/c1/400/250", "color": "rose" },
-        { "id": "c2", "title": "Cardano", "image": "https://picsum.photos/seed/c2/400/250", "color": "holo" },
-        { "id": "c3", "title": "Pattern", "image": "https://picsum.photos/seed/c3/400/250", "color": "rose" },
-        { "id": "c4", "title": "In Crypto We Trust", "image": "https://picsum.photos/seed/c4/400/250", "color": "silver" },
-        { "id": "c5", "title": "Dogecoin", "image": "https://picsum.photos/seed/c5/400/250", "color": "gold" },
-        { "id": "c6", "title": "Ethereum", "image": "https://picsum.photos/seed/c6/400/250", "color": "rose" },
-        { "id": "c7", "title": "Solana", "image": "https://picsum.photos/seed/c7/400/250", "color": "holo" }
+        { "id": "c1", "title": "Bitcoin Rose", "image": "Property-1Rose-min-7-1_webp_cache_50.webp", "color": "rose" },
+        { "id": "c2", "title": "Cardano", "image": "Property-1Iridance-min-2021-12-26T080748-223_webp_cache_50.webp", "color": "holo" },
+        { "id": "c3", "title": "Pattern", "image": "Property-1Rose-min-8_webp_cache_50.webp", "color": "rose" },
+        { "id": "c4", "title": "In Crypto We Trust", "image": "Property-1Silver-min-2021-12-26T080753-192_webp_cache_50.webp", "color": "silver" },
+        { "id": "c5", "title": "Dogecoin", "image": "Property-1Gold-min-13_webp_cache_50.webp", "color": "gold" },
+        { "id": "c6", "title": "Ethereum", "image": "Property-1Rose-min-9_webp_cache_50.webp", "color": "rose" },
+        { "id": "c7", "title": "Solana", "image": "Property-1Iridance-min-2022-09-19T111234-830_webp_cache_50.webp", "color": "holo" }
       ]
     },
     {
@@ -100,13 +100,13 @@
       "count": 7,
       "icon": "PawPrint",
       "items": [
-        { "id": "an1", "title": "Tiger", "image": "https://picsum.photos/seed/an1/400/250", "color": "holo" },
-        { "id": "an2", "title": "Bear", "image": "https://picsum.photos/seed/an2/400/250", "color": "rose" },
-        { "id": "an3", "title": "Koi Fish", "image": "https://picsum.photos/seed/an3/400/250", "color": "silver" },
-        { "id": "an4", "title": "Lion", "image": "https://picsum.photos/seed/an4/400/250", "color": "holo" },
-        { "id": "an5", "title": "Pitbull", "image": "https://picsum.photos/seed/an5/400/250", "color": "gold" },
-        { "id": "an6", "title": "Shark", "image": "https://picsum.photos/seed/an6/400/250", "color": "holo" },
-        { "id": "an7", "title": "Wolf", "image": "https://picsum.photos/seed/an7/400/250", "color": "silver" }
+        { "id": "an1", "title": "Tiger", "image": "drip-rb_webp_cache_50.webp", "color": "holo" },
+        { "id": "an2", "title": "Bear", "image": "Property-1Rose-min-10_webp_cache_50.webp", "color": "rose" },
+        { "id": "an3", "title": "Koi Fish", "image": "koi-s_webp_cache_50.webp", "color": "silver" },
+        { "id": "an4", "title": "Lion", "image": "Property-1Iridance-min-2022-09-19T112556-669_webp_cache_50.webp", "color": "holo" },
+        { "id": "an5", "title": "Pitbull", "image": "drip-g_webp_cache_50.webp", "color": "gold" },
+        { "id": "an6", "title": "Shark", "image": "shark-iri-min_webp_cache_50.webp", "color": "holo" },
+        { "id": "an7", "title": "Wolf", "image": "Property-1Silver-min-13_webp_cache_50.webp", "color": "silver" }
       ]
     },
     {
@@ -115,12 +115,12 @@
       "count": 6,
       "icon": "Building2",
       "items": [
-        { "id": "sk1", "title": "Chicago", "image": "https://picsum.photos/seed/sk1/400/250", "color": "gold" },
-        { "id": "sk2", "title": "Dubai", "image": "https://picsum.photos/seed/sk2/400/250", "color": "silver" },
-        { "id": "sk3", "title": "London", "image": "https://picsum.photos/seed/sk3/400/250", "color": "silver" },
-        { "id": "sk4", "title": "New York", "image": "https://picsum.photos/seed/sk4/400/250", "color": "gold" },
-        { "id": "sk5", "title": "San Francisco", "image": "https://picsum.photos/seed/sk5/400/250", "color": "rose" },
-        { "id": "sk6", "title": "Sydney", "image": "https://picsum.photos/seed/sk6/400/250", "color": "gold" }
+        { "id": "sk1", "title": "Chicago", "image": "Property-1Gold-min-2021-12-26T080747-402_webp_cache_50.webp", "color": "gold" },
+        { "id": "sk2", "title": "Dubai", "image": "Property-1Silver-min-2022-04-18T154740-449_webp_cache_50.webp", "color": "silver" },
+        { "id": "sk3", "title": "London", "image": "Property-1Silver-min-2022-08-26T173801-958_webp_cache_50.webp", "color": "silver" },
+        { "id": "sk4", "title": "New York", "image": "Property-1Gold-min-2022-04-18T154737-791_webp_cache_50.webp", "color": "gold" },
+        { "id": "sk5", "title": "San Francisco", "image": "Property-1Rose-min-2022-04-18T154739-810_webp_cache_50.webp", "color": "rose" },
+        { "id": "sk6", "title": "Sydney", "image": "Property-1Gold-min-2022-08-26T173757-149_webp_cache_50.webp", "color": "gold" }
       ]
     },
     {
@@ -129,11 +129,11 @@
       "count": 5,
       "icon": "Trophy",
       "items": [
-        { "id": "sp1", "title": "Curry", "image": "https://picsum.photos/seed/sp1/400/250", "color": "gold" },
-        { "id": "sp2", "title": "Kobe", "image": "https://picsum.photos/seed/sp2/400/250", "color": "silver" },
-        { "id": "sp3", "title": "Champion", "image": "https://picsum.photos/seed/sp3/400/250", "color": "black" },
-        { "id": "sp4", "title": "Jordan", "image": "https://picsum.photos/seed/sp4/400/250", "color": "holo" },
-        { "id": "sp5", "title": "Boxing", "image": "https://picsum.photos/seed/sp5/400/250", "color": "black" }
+        { "id": "sp1", "title": "Curry", "image": "Property-1Gold-min-2022-09-12T082321-066_webp_cache_50.webp", "color": "gold" },
+        { "id": "sp2", "title": "Kobe", "image": "Property-1Silver-min-2022-09-19T110723-511_webp_cache_50.webp", "color": "silver" },
+        { "id": "sp3", "title": "Champion", "image": "Property-1Black-min-2022-09-19T112107-356_webp_cache_50.webp", "color": "black" },
+        { "id": "sp4", "title": "Jordan", "image": "Property-1Iridance-min-2022-09-19T111234-830_webp_cache_50.webp", "color": "holo" },
+        { "id": "sp5", "title": "Boxing", "image": "Property-1Black-min-2022-09-19T112658-269_webp_cache_50.webp", "color": "black" }
       ]
     },
     {
@@ -142,12 +142,12 @@
       "count": 6,
       "icon": "Palette",
       "items": [
-        { "id": "sa1", "title": "Graffiti Gold", "image": "https://picsum.photos/seed/sa1/400/250", "color": "gold" },
-        { "id": "sa2", "title": "Monopoly", "image": "https://picsum.photos/seed/sa2/400/250", "color": "gold" },
-        { "id": "sa3", "title": "Rich Man", "image": "https://picsum.photos/seed/sa3/400/250", "color": "gold" },
-        { "id": "sa4", "title": "Hustle", "image": "https://picsum.photos/seed/sa4/400/250", "color": "gold" },
-        { "id": "sa5", "title": "Guns Rose", "image": "https://picsum.photos/seed/sa5/400/250", "color": "rose" },
-        { "id": "sa6", "title": "King Gold", "image": "https://picsum.photos/seed/sa6/400/250", "color": "gold" }
+        { "id": "sa1", "title": "Graffiti Gold", "image": "Property-1Gold-min-2022-09-19T110720-351_webp_cache_50.webp", "color": "gold" },
+        { "id": "sa2", "title": "Monopoly", "image": "Property-1Gold-min-2022-09-19T111431-700_webp_cache_50.webp", "color": "gold" },
+        { "id": "sa3", "title": "Rich Man", "image": "Property-1Gold-min-2022-09-19T113052-971-2_webp_cache_50.webp", "color": "gold" },
+        { "id": "sa4", "title": "Hustle", "image": "Property-1Gold-min-2022-09-19T113255-697-1_webp_cache_50.webp", "color": "gold" },
+        { "id": "sa5", "title": "Guns Rose", "image": "Property-1Rose-min-2022-09-19T110721-843_webp_cache_50.webp", "color": "rose" },
+        { "id": "sa6", "title": "King Gold", "image": "Property-1Gold-min-2022-09-19T113748-741_webp_cache_50.webp", "color": "gold" }
       ]
     },
     {
@@ -156,9 +156,9 @@
       "count": 3,
       "icon": "Play",
       "items": [
-        { "id": "mo1", "title": "Rick & Morty", "image": "https://picsum.photos/seed/mo1/400/250", "color": "black" },
-        { "id": "mo2", "title": "Futurama", "image": "https://picsum.photos/seed/mo2/400/250", "color": "rose" },
-        { "id": "mo3", "title": "Squid Game", "image": "https://picsum.photos/seed/mo3/400/250", "color": "gold" }
+        { "id": "mo1", "title": "Rick & Morty", "image": "Property-1Black-min-2022-09-19T112834-528_webp_cache_50.webp", "color": "black" },
+        { "id": "mo2", "title": "Futurama", "image": "Property-1Rose-min-2022-09-19T111429-120_webp_cache_50.webp", "color": "rose" },
+        { "id": "mo3", "title": "Squid Game", "image": "Property-1Gold-min-2022-09-19T111431-700_webp_cache_50.webp", "color": "gold" }
       ]
     }
   ]
