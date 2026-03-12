@@ -19,6 +19,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import circuitImg from '../../assets/images/circuit.png';
 import productsData from '../data/products.json';
 
 // Mapping icon names to components
@@ -180,7 +181,7 @@ export default function BestSellers() {
                           color === 'silver' ? 'bg-gray-400' :
                           color === 'rose' ? 'bg-rose-400' :
                           color === 'black' ? 'bg-zinc-800' :
-                          'bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400'
+                          'bg-linear-to-tr from-blue-400 via-purple-400 to-pink-400'
                         }`}
                       />
                     ))}
@@ -208,21 +209,13 @@ export default function BestSellers() {
                           className="w-full h-full object-cover opacity-90 group-hover:opacity-50 transition-all duration-500"
                         />
                         
-                        {/* Card Details (SIM Chip) */}
+                        {/* Card Details (Circuit Image) */}
                         <div className="absolute inset-0 p-8 flex flex-col justify-center">
-                          {/* Realistic SIM Chip */}
-                          <div className="w-12 h-10 relative rounded-md overflow-hidden bg-gradient-to-br from-[#D4AF37] via-[#FFD700] to-[#B8860B] shadow-inner">
-                            {/* Chip Lines */}
-                            <div className="absolute inset-0 opacity-30">
-                              <div className="absolute top-1/2 left-0 w-full h-[1px] bg-black" />
-                              <div className="absolute top-0 left-1/3 w-[1px] h-full bg-black" />
-                              <div className="absolute top-0 left-2/3 w-[1px] h-full bg-black" />
-                              <div className="absolute top-1/4 left-0 w-full h-[1px] bg-black" />
-                              <div className="absolute top-3/4 left-0 w-full h-[1px] bg-black" />
-                            </div>
-                            {/* Inner Glow */}
-                            <div className="absolute inset-0 border border-white/20 rounded-md" />
-                          </div>
+                          <img 
+                            src={circuitImg} 
+                            alt="circuit"
+                            className="w-12 h-10 object-cover rounded-md shadow-lg"
+                          />
                         </div>
 
                         {/* Hover Overlay with Button */}
