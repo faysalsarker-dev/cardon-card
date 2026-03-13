@@ -111,6 +111,9 @@ export default function BestSellers() {
           <p className="text-white/50 text-sm md:text-base max-w-md mx-auto">
             Select one of our Best Sellers, add your name and checkout!
           </p>
+          {/* <p>
+             Select one of our Best Sellers, add your name and checkout!
+          </p> */}
         </header>
 
         {/* Category Quick Navigation (Horizontal Bar) */}
