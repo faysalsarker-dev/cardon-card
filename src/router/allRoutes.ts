@@ -1,9 +1,9 @@
 import HomePage from "@/pages/home/HomePage";
 import HowItWork from "@/pages/howItWork/HowItWork";
 import Contact from "@/pages/contact/Contact";
-import DesignMyOwn from "@/pages/design/DesignMyOwn";
 import Faq from "@/pages/faq/Faq";
 import BestSellers from "@/pages/bestSellers/BestSellers";
+import OrderPage from "@/pages/order/OrderPage";
 
 const routes = [
   {
@@ -20,16 +20,6 @@ const routes = [
     Component: Contact,
     path: "/support",
     name: "contact",
-  },
-  {
-    Component: DesignMyOwn,
-    path: "/design-your-own",
-    name: "designYourOwn",
-  },
-  {
-    Component: DesignMyOwn,
-    path: "/order",
-    name: "designYourOwnOrder",
   },
   {
     Component: Faq,

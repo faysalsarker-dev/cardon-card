@@ -1,6 +1,7 @@
 import MainLayout from "@/layout/MainLayout";
 import { createBrowserRouter } from "react-router";
 import routes from "./allRoutes";
+import OrderPage from "@/pages/order/OrderPage";
 
 
 export const router = createBrowserRouter([
@@ -19,4 +20,12 @@ export const router = createBrowserRouter([
 
 
   
-}]);
+},
+ {
+    Component: OrderPage,
+    path: "/order",
+  },
+
+
+
+]);

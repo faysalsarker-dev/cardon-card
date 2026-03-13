@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <header className={`header ${scrolled ? 'active' : ''}`}>
       <div className="header__blured">
-        <div className="container">
+        <div className="container px-4">
           <div className="header__visible">
             <Link to="/" className="logo img header_logo_img">
               <img 

@@ -39,7 +39,7 @@ function HeroSection() {
       <div className="main_section_hero_video">
         <video
           ref={videoRef}
-          src="https://carboncoskins.com/wp-content/themes/catapulta-carbon/video/video-2.mp4?1"
+          src="./heroVideo.mp4"
           muted
           playsInline
           loop
