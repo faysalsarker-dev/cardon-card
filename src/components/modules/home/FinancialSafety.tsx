@@ -6,17 +6,17 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    icon: '/src/assets/images/icon_world.svg',
+    icon: './sefty/icon_world.svg',
     title: 'Shipping',
     description: 'We only use secure and tracked shipping in discreet unbranded packaging.'
   },
   {
-    icon: '/src/assets/images/icon_lamp.svg',
+    icon: './sefty/icon_lamp.svg',
     title: 'Process',
     description: 'Our equipment is highly secure and does not store any personal or sensitive card information.'
   },
   {
-    icon: '/src/assets/images/icon_protect.svg',
+    icon: './sefty/icon_protect.svg',
     title: 'Card Data',
     description: 'All payments are processed via our PCI compliant payment merchant.'
   }
