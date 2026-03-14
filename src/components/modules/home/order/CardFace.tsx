@@ -4,50 +4,85 @@ import ElegantBorder from "@/components/modules/home/order/ElegantBorder";
 import type { CardState, ColorKey, DragPos, Side } from "@/pages/order/OrderPage";
 import { useCallback, useRef } from "react";
 import { GripHorizontal } from "lucide-react";
+
+// Dynamically import all images from cardImages folder
+const imageModules = import.meta.glob('../../../../assets/cardImages/*.webp', { eager: true });
+
+// Create a mapping of filename to image path
+const imageMap: Record<string, string> = {};
+Object.entries(imageModules).forEach(([path, module]) => {
+  const filename = path.split('/').pop() || '';
+  imageMap[filename] = (module as { default: string }).default;
+});
+
+
 const CARD_BLOOM: Record<ColorKey, string> = {
   black: `
-    radial-gradient(ellipse 80% 60% at 68% 38%, rgba(100,100,100,0.70) 0%, rgba(55,55,55,0.35) 30%, rgba(10,10,10,0.0) 65%),
-    radial-gradient(ellipse 100% 100% at 50% 50%, #1e1e1e 0%, #0d0d0d 55%, #050505 100%)
+    radial-gradient(ellipse 120% 120% at 75% -10%, rgba(255,255,255,0.12) 0%, transparent 45%),
+    radial-gradient(ellipse 100% 100% at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%)
   `,
   gold: `
-    radial-gradient(ellipse 80% 60% at 68% 38%, rgba(255,240,130,0.75) 0%, rgba(210,160,30,0.4) 35%, rgba(100,60,0,0.0) 65%),
-    radial-gradient(ellipse 100% 100% at 50% 50%, #c8880a 0%, #7a4e00 55%, #3a2200 100%)
+    radial-gradient(ellipse 150% 100% at 80% 10%, rgba(255,253,208,0.5) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 100% at 0% 100%, rgba(255,255,255,0.2) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, #e7c05f 0%, #9c7122 100%)
   `,
   silver: `
-    radial-gradient(ellipse 80% 60% at 68% 38%, rgba(255,255,255,0.75) 0%, rgba(190,190,190,0.4) 35%, rgba(80,80,80,0.0) 65%),
-    radial-gradient(ellipse 100% 100% at 50% 50%, #d0d0d0 0%, #909090 55%, #555 100%)
+    radial-gradient(ellipse 150% 100% at 80% 10%, rgba(255,255,255,0.6) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 100% at 0% 100%, rgba(255,255,255,0.3) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, #dcdcdc 0%, #808080 100%)
   `,
   rose: `
-    radial-gradient(ellipse 80% 60% at 68% 38%, rgba(255,200,210,0.70) 0%, rgba(200,120,140,0.4) 35%, rgba(80,20,40,0.0) 65%),
-    radial-gradient(ellipse 100% 100% at 50% 50%, #c06070 0%, #8a3040 55%, #4a1020 100%)
+    radial-gradient(ellipse 150% 100% at 80% 10%, rgba(255,220,220,0.4) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 100% at 0% 100%, rgba(255,255,255,0.2) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, #e5b2a9 0%, #b57e74 100%)
   `,
-  split: `linear-gradient(135deg, #ffe97d 50%, #111 50%)`,
-  holographic: `linear-gradient(135deg, #f0f 0%, #0ff 25%, #0f0 50%, #ff0 75%, #f0f 100%)`,
+  split: `
+    linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%),
+    linear-gradient(135deg, #e7c05f 50%, #111111 50%)
+  `,
+  holographic: `
+    linear-gradient(135deg, rgba(255,255,255,0.5) 0%, transparent 30%),
+    linear-gradient(135deg, #ff00ff 0%, #00ffff 25%, #00ff00 50%, #ffff00 75%, #ff00ff 100%)
+  `,
 };
 
+
+
+
+
 const TEXT_COLOR: Record<ColorKey, string> = {
-  black:       "#b8b8b8",
-  gold:        "#2a1500",
-  silver:      "#222",
-  rose:        "#fff",
-  split:       "#fff",
-  holographic: "#111",
+  // A soft silver/white to pop against the dark brushed metal
+  black: "#e0e0e0", 
+  // Deep bronze/brown to look like it's stamped into the gold
+  gold: "#4a3304", 
+  // Dark charcoal to contrast against the bright silver sheen
+  silver: "#333333", 
+  // Soft cream/white for a luxury feel on the rose base
+  rose: "#f8f0f0", 
+  // Pure white to remain visible on the split design
+  split: "#ffffff", 
+  // Darkest gray for the rainbow holographic background
+  holographic: "#1a1a1a", 
 };
 
 const CARD_BASE: Record<ColorKey, string> = {
-  black:       "#0c0c0c",
-  gold:        "#7a4e00",
-  silver:      "#5a5a5a",
-  rose:        "#6b2030",
-  split:       "#111",
-  holographic: "#111",
+  // Deepest black to ground the conic reflections
+  black: "#050505", 
+  // Mid-tone ochre to provide body under the gold sheen
+  gold: "#9c7122", 
+  // Solid neutral gray for the silver foundation
+  silver: "#808080", 
+  // Muted burgundy/rose to give depth to the pink highlights
+  rose: "#8a4f46", 
+  // Dark base for the split/holographic variants
+  split: "#0a0a0a", 
+  holographic: "#0a0a0a", 
 };
 
 
-
-
 function useDrag(
-  containerRef: React.RefObject<HTMLDivElement>,
+  containerRef: React.RefObject<HTMLDivElement | null>,
   pos: DragPos,
   onUpdate: (pos: DragPos) => void,
   padRight = 120,
@@ -90,7 +125,7 @@ function Draggable({
   pos, containerRef, onUpdate, padRight = 120, padBottom = 30, children,
 }: {
   pos: DragPos;
-  containerRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
   onUpdate: (p: DragPos) => void;
   padRight?: number;
   padBottom?: number;
@@ -120,10 +155,12 @@ export default function CardFace({
   state,
   side,
   onChange,
+  template
 }: {
   state: CardState;
   side: Side;
   onChange?: (p: Partial<CardState>) => void;
+  template?: string | null;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const isFront = side === "front";
@@ -149,6 +186,22 @@ export default function CardFace({
         borderRadius: "20px",
       }}
     >
+      {/* ── Template Background ── */}
+      {template && imageMap[template] && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img 
+            src={imageMap[template]} 
+            alt="Card Template" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
+
+
+
+
+
+
       {/* ── Noise texture for the metallic brushed look ── */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")`,
@@ -264,8 +317,9 @@ export default function CardFace({
           padBottom={36}
         >
           <img src={state.logo} alt="Logo" style={{
-            width: "clamp(36px, 7vw, 60px)",
-            height: "clamp(18px, 3.5vw, 30px)",
+            width: `${state.logoSize}px`,
+            height: "auto",
+            maxHeight: "60px",
             objectFit: "contain",
             opacity: 0.92,
           }} />
@@ -274,8 +328,9 @@ export default function CardFace({
       {state.logo && isFront && !canDrag && (
         <div className="absolute" style={{ left: state.logoPos.x, top: state.logoPos.y }}>
           <img src={state.logo} alt="Logo" style={{
-            width: "clamp(36px, 7vw, 60px)",
-            height: "clamp(18px, 3.5vw, 30px)",
+            width: `${state.logoSize}px`,
+            height: "auto",
+            maxHeight: "60px",
             objectFit: "contain", opacity: 0.92,
           }} />
         </div>

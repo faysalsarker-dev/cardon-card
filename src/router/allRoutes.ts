@@ -3,7 +3,6 @@ import HowItWork from "@/pages/howItWork/HowItWork";
 import Contact from "@/pages/contact/Contact";
 import Faq from "@/pages/faq/Faq";
 import BestSellers from "@/pages/bestSellers/BestSellers";
-import OrderPage from "@/pages/order/OrderPage";
 
 const routes = [
   {

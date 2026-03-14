@@ -4,7 +4,7 @@ import './Navbar.css';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);

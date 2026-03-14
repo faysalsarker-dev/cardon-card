@@ -129,12 +129,41 @@ export function TabEditInfo({ state, onChange }: {
   );
 }
 
+// const COLORS: { key: ColorKey; label: string; price: number; swatch: string }[] = [
+//   { key: "black", label: "Black", price: 0, swatch: "conic-gradient(from 180deg at 50% 50%, #111 0deg, #444 120deg, #000 240deg, #111 360deg)" },
+//   { key: "gold", label: "Gold", price: 15, swatch: "conic-gradient(from 180deg at 50% 50%, #E7C05F 0deg, #F9F0B2 120deg, #9C7122 240deg, #E7C05F 360deg)" },
+//   { key: "silver", label: "Silver", price: 15, swatch: "conic-gradient(from 180deg at 50% 50%, #C0C0C0 0deg, #FFFFFF 120deg, #808080 240deg, #C0C0C0 360deg)" },
+//   { key: "rose", label: "Rose", price: 15, swatch: "conic-gradient(from 180deg at 50% 50%, #E5B2A9 0deg, #FFDED8 120deg, #B57E74 240deg, #E5B2A9 360deg)" },
+// ];
+
 const COLORS: { key: ColorKey; label: string; price: number; swatch: string }[] = [
-  { key: "black", label: "Black", price: 0, swatch: "conic-gradient(from 180deg at 50% 50%, #111 0deg, #444 120deg, #000 240deg, #111 360deg)" },
-  { key: "gold", label: "Gold", price: 15, swatch: "conic-gradient(from 180deg at 50% 50%, #E7C05F 0deg, #F9F0B2 120deg, #9C7122 240deg, #E7C05F 360deg)" },
-  { key: "silver", label: "Silver", price: 15, swatch: "conic-gradient(from 180deg at 50% 50%, #C0C0C0 0deg, #FFFFFF 120deg, #808080 240deg, #C0C0C0 360deg)" },
-  { key: "rose", label: "Rose", price: 15, swatch: "conic-gradient(from 180deg at 50% 50%, #E5B2A9 0deg, #FFDED8 120deg, #B57E74 240deg, #E5B2A9 360deg)" },
+  { 
+    key: "black", 
+    label: "Black", 
+    price: 0, 
+    swatch: "conic-gradient(from 225deg at 50% 50%, #222, #000, #444, #000, #222)" 
+  },
+  { 
+    key: "gold", 
+    label: "Gold", 
+    price: 15, 
+    swatch: "conic-gradient(from 225deg at 50% 50%, #9C7122, #F9F0B2, #E7C05F, #9C7122, #F9F0B2, #9C7122)" 
+  },
+  { 
+    key: "silver", 
+    label: "Silver", 
+    price: 15, 
+    swatch: "conic-gradient(from 225deg at 50% 50%, #808080, #FFFFFF, #C0C0C0, #808080, #FFFFFF, #808080)" 
+  },
+  { 
+    key: "rose", 
+    label: "Rose", 
+    price: 15, 
+    swatch: "conic-gradient(from 225deg at 50% 50%, #B57E74, #FFDED8, #E5B2A9, #B57E74, #FFDED8, #B57E74)" 
+  },
 ];
+
+
 
 export function TabChooseMetal({ state, onChange }: { state: CardState; onChange: (p: Partial<CardState>) => void }) {
   return (
@@ -301,15 +330,48 @@ export function TabLogoText({ state, onChange }: {
 
   {/* Logo Preview Section */}
   {state.logo && (
-    <div className="mt-4 p-4 rounded-[24px] border border-dashed border-zinc-200 bg-zinc-50/50">
-      <img 
-        src={state.logo} 
-        alt="Logo preview"
-        className="w-full h-32 object-contain rounded-xl" 
-      />
-      <p className="text-center text-[11px] font-bold text-zinc-400 mt-3 uppercase tracking-widest">
-        Current Preview
-      </p>
+    <div className="mt-4 p-4 rounded-[24px] border border-dashed border-zinc-200 bg-zinc-50/50 space-y-4">
+      <div className="flex justify-center items-center h-32">
+        <img 
+          src={state.logo} 
+          alt="Logo preview"
+          className="max-w-full max-h-full object-contain rounded-xl" 
+        />
+      </div>
+      
+      <div className="flex items-center justify-between px-2">
+        <div className="space-y-1">
+          <Label className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Logo Size</Label>
+          <div className="flex items-center border border-zinc-200 rounded-lg overflow-hidden bg-white shadow-sm w-32">
+            <Input 
+              type="number" 
+              min={20} 
+              max={150} 
+              value={state.logoSize || 40}
+              onChange={(e) => onChange({ logoSize: Number(e.target.value) })}
+              className="w-full border-none bg-transparent text-black text-sm px-3 font-bold focus-visible:ring-0" 
+            />
+            <div className="flex flex-col border-l border-zinc-100">
+              <button 
+                onClick={() => onChange({ logoSize: Math.min(150, (state.logoSize || 40) + 2) })}
+                className="px-2 py-1 text-zinc-400 hover:text-black hover:bg-zinc-50 text-[10px]"
+              >
+                ▲
+              </button>
+              <button 
+                onClick={() => onChange({ logoSize: Math.max(20, (state.logoSize || 40) - 2) })}
+                className="px-2 py-1 text-zinc-400 hover:text-black hover:bg-zinc-50 text-[10px] border-t border-zinc-100"
+              >
+                ▼
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest self-end">
+          Current Preview
+        </p>
+      </div>
     </div>
   )}
 

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { 
   Dices, 
   Star, 
@@ -11,16 +11,14 @@ import {
   Trophy, 
   Palette,
   Play,
-  ChevronLeft,
-  ChevronRight,
-  Menu,
-  X,
+
   ArrowLeft,
   ArrowRight
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import circuitImg from '../../assets/images/circuit.png';
 import productsData from '../data/products.json';
+import { Link } from 'react-router';
 
 // Dynamically import all images from cardImages folder
 const imageModules = import.meta.glob('../../assets/cardImages/*.webp', { eager: true });
@@ -76,9 +74,7 @@ interface Category {
 
 export default function BestSellers() {
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollIndex, setScrollIndex] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   const toggleCategory = (categoryId: string) => {
     setExpandedCategories(prev => ({
@@ -217,6 +213,9 @@ export default function BestSellers() {
                 <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <AnimatePresence mode="popLayout">
                     {visibleItems.map((item, index) => (
+                      
+
+                      <Link to={`/order?template=${item.image}`}>
                       <motion.div
                         key={item.id}
                         layout
@@ -250,6 +249,8 @@ export default function BestSellers() {
                           </button>
                         </div>
                       </motion.div>
+                      
+                      </Link>
                     ))}
                   </AnimatePresence>
                 </motion.div>
