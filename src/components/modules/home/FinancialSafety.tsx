@@ -31,13 +31,13 @@ const FinancialSafety = () => {
           <p className="text-xl lg:text-lg text-white/70 mb-14">Your financial safety is our priority.</p>
         </div>
         
-        <div className="mt-28 lg:mt-16 w-full flex flex-wrap justify-center gap-10 lg:gap-8">
+        <div className="mt-28 lg:mt-16 w-full flex flex-wrap justify-center gap-10 lg:gap-8 md:p-0 p-3">
           {features.map((feature, index) => (
             <div 
               className="w-full max-w-99.75 flex flex-col items-start justify-start border border-[#222] rounded-[10px] relative min-h-53" 
               key={index}
             >
-              <div className="h-20 absolute right-6 -top-10">
+              <div className="md:h-20 h-12 absolute right-6 md:-top-10 -top-5">
                 <img src={feature.icon} alt={feature.title} className="h-full w-auto" />
               </div>
               <div className="pt-8 pr-7 pb-5 pl-8">
