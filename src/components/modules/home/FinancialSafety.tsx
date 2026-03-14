@@ -27,11 +27,11 @@ const FinancialSafety = () => {
     <section className="pt-16 lg:pt-20 pb-12 lg:pb-20 w-full bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="w-full flex flex-col items-center justify-center">
-          <h2 className="text-5xl lg:text-7xl font-bold text-white mb-4">Financial Safety</h2>
-          <p className="text-xl lg:text-lg text-white/70 mb-14">Your financial safety is our priority.</p>
+          <h2 className="text-4xl md:text-7xl font-bold text-white mb-4">Financial Safety</h2>
+          <p className="text-xl lg:text-lg text-white/80 mb-14">Your financial safety is our priority.</p>
         </div>
         
-        <div className="mt-28 lg:mt-16 w-full flex flex-wrap justify-center gap-10 lg:gap-8 md:p-0 p-3">
+        <div className="mt-10 md:mt-16 w-full flex flex-wrap justify-center gap-10 lg:gap-8 md:p-0 p-3">
           {features.map((feature, index) => (
             <div 
               className="w-full max-w-99.75 flex flex-col items-start justify-start border border-[#222] rounded-[10px] relative min-h-53" 
