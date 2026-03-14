@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Dices, 
   Star, 
@@ -72,9 +72,23 @@ interface Category {
   items: CardItem[];
 }
 
+function useVisibleCount() {
+  const [count, setCount] = useState(() => {
+    if (typeof window === 'undefined') return 7;
+    return window.innerWidth < 640 ? 2 : window.innerWidth < 1024 ? 4 : 7;
+  });
+  useEffect(() => {
+    const handler = () => setCount(window.innerWidth < 640 ? 2 : window.innerWidth < 1024 ? 4 : 7);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
+  return count;
+}
+
 export default function BestSellers() {
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
   const [scrollIndex, setScrollIndex] = useState(0);
+  const visibleCount = useVisibleCount();
 
   const toggleCategory = (categoryId: string) => {
     setExpandedCategories(prev => ({
@@ -85,25 +99,20 @@ export default function BestSellers() {
 
   const handleScroll = (direction: 'left' | 'right') => {
     const totalItems = productsData.categories.length;
-    
     if (direction === 'right') {
-      if (scrollIndex + 7 < totalItems) {
-        setScrollIndex(prev => prev + 1);
-      }
+      if (scrollIndex + visibleCount < totalItems) setScrollIndex(prev => prev + 1);
     } else {
-      if (scrollIndex > 0) {
-        setScrollIndex(prev => prev - 1);
-      }
+      if (scrollIndex > 0) setScrollIndex(prev => prev - 1);
     }
   };
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-white/20">
   
-      <main className="max-w-7xl mx-auto px-6 pb-12 pt-40" >
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 pt-24 sm:pt-32 md:pt-40">
         {/* Hero Section */}
-        <header className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">Best Sellers</h1>
+        <header className="text-center mb-10 sm:mb-16">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-4">Best Sellers</h1>
           <p className="text-white/50 text-sm md:text-base max-w-md mx-auto">
             Select one of our Best Sellers, add your name and checkout!
           </p>
@@ -113,9 +122,9 @@ export default function BestSellers() {
         </header>
 
         {/* Category Quick Navigation (Horizontal Bar) */}
-        <section className="mb-24 overflow-hidden">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold tracking-tight">Explore by Category</h2>
+        <section className="mb-12 sm:mb-24 overflow-hidden">
+          <div className="flex items-center justify-between mb-6 sm:mb-8">
+            <h2 className="text-lg sm:text-2xl font-bold tracking-tight">Explore by Category</h2>
             <div className="flex gap-3">
               <button 
                 onClick={() => handleScroll('left')}
@@ -126,7 +135,7 @@ export default function BestSellers() {
               </button>
               <button 
                 onClick={() => handleScroll('right')}
-                disabled={scrollIndex + 7 >= productsData.categories.length}
+                disabled={scrollIndex + visibleCount >= productsData.categories.length}
                 className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all disabled:opacity-20 disabled:hover:bg-transparent disabled:hover:text-white"
               >
                 <ArrowRight size={18} />
@@ -136,7 +145,7 @@ export default function BestSellers() {
 
           <div className="relative">
             <motion.div 
-              animate={{ x: `-${scrollIndex * (100 / 7)}%` }}
+              animate={{ x: `-${scrollIndex * (100 / visibleCount)}%` }}
               transition={{ type: "spring", stiffness: 100, damping: 20, mass: 1 }}
               className="flex gap-4"
             >
@@ -146,7 +155,7 @@ export default function BestSellers() {
                   <a
                     key={cat.id}
                     href={`#${cat.id}`}
-                    className="flex-none w-[calc((100%-6*1rem)/7)] aspect-[0.85/1] bg-[#0A0A0A] border border-white/5 rounded-xl p-6 flex flex-col items-center justify-center gap-6 transition-all duration-300 group hover:border-white/20 hover:bg-[#111111] relative"
+                    className="flex-none w-[calc((100%-1rem)/2)] sm:w-[calc((100%-3*1rem)/4)] lg:w-[calc((100%-6*1rem)/7)] aspect-[0.85/1] bg-[#0A0A0A] border border-white/5 rounded-xl p-4 sm:p-6 flex flex-col items-center justify-center gap-4 sm:gap-6 transition-all duration-300 group hover:border-white/20 hover:bg-[#111111] relative"
                   >
                     {/* Count Badge */}
                     <div className="absolute top-3 left-3 w-6 h-6 bg-white text-black text-[10px] font-black rounded-full flex items-center justify-center">
@@ -170,7 +179,7 @@ export default function BestSellers() {
         </section>
 
         {/* Vertical Category Sections */}
-        <div className="space-y-32">
+        <div className="space-y-16 sm:space-y-24 lg:space-y-32">
           {productsData.categories.map((category: Category) => {
             const isExpanded = expandedCategories[category.id];
             const visibleItems = isExpanded ? category.items : category.items.slice(0, 6);
@@ -179,7 +188,7 @@ export default function BestSellers() {
             return (
               <section key={category.id} id={category.id} className="scroll-mt-24">
                 {/* Section Header */}
-                <div className="flex items-center justify-between mb-8">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6 sm:mb-8">
                   <div className="flex items-center gap-3">
                     {Icon && (
                       <div className="p-2 bg-white/5 rounded-lg">
@@ -193,11 +202,11 @@ export default function BestSellers() {
                   </div>
                   
                   {/* Color Filter */}
-                  <div className="flex gap-1.5">
+                  <div className="flex gap-1.5 flex-wrap">
                     {['gold', 'silver', 'rose', 'black', 'rainbow', 'blackgold'].map((color) => (
                       <div 
                         key={color} 
-                        className="w-10 h-10 rounded-full border border-white/10 cursor-pointer hover:scale-110 transition-transform overflow-hidden"
+                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/10 cursor-pointer hover:scale-110 transition-transform overflow-hidden"
                       >
                         <img 
                           src={colorImageMap[color]} 
@@ -223,7 +232,7 @@ export default function BestSellers() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.4, delay: (index % 6) * 0.05 }}
-                        className="group relative aspect-[1.6/1] rounded-2xl overflow-hidden bg-[#0A0A0A] border border-white/10 hover:border-white/20 transition-all duration-500 cursor-pointer"
+                        className="group relative aspect-[1.6/1] rounded-xl sm:rounded-2xl overflow-hidden bg-[#0A0A0A] border border-white/10 hover:border-white/20 transition-all duration-500 cursor-pointer"
                       >
                         {/* Background Image with Opacity on Hover */}
                         <img 
@@ -234,7 +243,7 @@ export default function BestSellers() {
                         />
                         
                         {/* Card Details (Circuit Image) */}
-                        <div className="absolute inset-0 p-8 flex flex-col justify-center">
+                        <div className="absolute inset-0 p-4 sm:p-8 flex flex-col justify-center">
                           <img 
                             src={circuitImg} 
                             alt="circuit"

@@ -23,7 +23,7 @@ function HeroSection() {
       if (!videoRef.current) return;
 
       const scrollY = window.scrollY;
-      const maxScroll = 900;
+      const maxScroll = window.innerWidth <= 768 ? 500 : 900;
       const scrollFraction = Math.min(scrollY / maxScroll, 1);
 
       videoRef.current.currentTime = videoRef.current.duration * scrollFraction;
