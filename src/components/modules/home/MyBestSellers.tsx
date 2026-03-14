@@ -7,6 +7,7 @@ import circuit from "@/assets/images/circuit.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+
 const cards = [
   { id: 0, title: "Millionaire Card", image: bclubRb, buttonLabel: "ADD TO CART" },
   { id: 1, title: "Royal King", image: mclubG, buttonLabel: "ADD TO CART" },
@@ -120,6 +121,8 @@ export default function MyBestSellers() {
                       zIndex: rel === 0 ? 2 : 1,
                     }}
                   >
+
+                   
                     <div className="max-w-125 rounded-2xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.9)] bg-black/40">
                       {index === cards.length - 1 ? (
                         <div className="md:w-125 w-52.5 h-32 md:h-75 border py-2 border-gray-700/70 rounded-2xl flex justify-center items-center">
@@ -141,6 +144,8 @@ export default function MyBestSellers() {
                       )}
                     </div>
                   </div>
+
+                 
                 );
               })}
             </div>

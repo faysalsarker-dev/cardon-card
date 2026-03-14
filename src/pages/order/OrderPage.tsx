@@ -1,7 +1,8 @@
 
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { toPng } from "html-to-image";
 
 import CardFace from "@/components/modules/home/order/CardFace";
 import { TabChooseMetal, TabEditInfo, TabLogoText } from "@/components/modules/home/order/TabsContent";
@@ -55,8 +56,75 @@ export default function OrderPage() {
     border: "ornate", customTexts: [], logo: null,
   });
 
+  const [isSending, setIsSending] = useState(false);
+
+  const frontRef = useRef<HTMLDivElement>(null);
+  const backRef = useRef<HTMLDivElement>(null);
+
   const onChange = (patch: Partial<CardState>) =>
     setState((prev) => ({ ...prev, ...patch }));
+
+  const handleCreateOrder = async () => {
+    if (isSending) return;
+    
+    try {
+      setIsSending(true);
+      console.log("Generating order design snapshots...");
+      
+      let frontImage = "";
+      let backImage = "";
+
+      if (frontRef.current) {
+        frontImage = await toPng(frontRef.current, { cacheBust: true });
+      }
+      if (backRef.current) {
+        backImage = await toPng(backRef.current, { cacheBust: true });
+      }
+
+      const orderData = {
+        template: template || "none",
+        configuration: state,
+        designs: {
+          front: frontImage,
+          back: backImage
+        },
+        timestamp: new Date().toISOString()
+      };
+
+      console.log("Submitting order to Formspree...",orderData);
+      
+      // // REPLACE 'YOUR_FORMSPREE_ID' with your actual Formspree ID
+      // const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_ID";
+
+      // const response = await fetch(FORMSPREE_ENDPOINT, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'Accept': 'application/json'
+      //   },
+      //   body: JSON.stringify(orderData)
+      // });
+
+      // if (response.ok) {
+      //   console.log("Order submitted to Formspree successfully!");
+      //   alert("Order sent to admin successfully!");
+      // } else {
+      //   const errorData = await response.json();
+      //   console.error("Formspree submission error:", errorData);
+      //   alert("There was an issue sending the order. Please check the console.");
+      // }
+
+      // console.log("Order Details for reference:", orderData);
+      
+    
+      
+    } catch (error) {
+      console.error("Error creating order:", error);
+      alert("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: "Inter, sans-serif" }}>
@@ -121,10 +189,10 @@ export default function OrderPage() {
         
         {/* Left - Previews */}
         <div className="space-y-12 mt-5">
-          <div className="rounded-3xl overflow-hidden shadow-2xl">
+          <div ref={frontRef} className="rounded-3xl overflow-hidden shadow-2xl">
             <CardFace state={state} side="front" onChange={onChange} template={template} />
           </div>
-          <div className="rounded-3xl overflow-hidden shadow-xl opacity-90">
+          <div ref={backRef} className="rounded-3xl overflow-hidden shadow-xl opacity-90">
             <CardFace state={state} side="back" onChange={onChange} template={template} />
           </div>
         </div>
@@ -183,8 +251,12 @@ export default function OrderPage() {
   {/* Bottom Price Summary and Button */}
   <div className="pt-8 px-4">
     <PriceSummary state={state} />
-    <button className="w-full mt-6 py-5 bg-[#111] text-white text-lg font-bold rounded-2xl tracking-tight hover:bg-black transition-all flex items-center justify-center gap-2">
-      Create Order <span className="text-xl">→</span>
+    <button 
+      onClick={handleCreateOrder}
+      disabled={isSending}
+      className={`w-full mt-6 py-5 bg-[#111] text-white text-lg font-bold rounded-2xl tracking-tight transition-all flex items-center justify-center gap-2 ${isSending ? 'opacity-70 cursor-not-allowed' : 'hover:bg-black'}`}
+    >
+      {isSending ? "Processing Order..." : "Create Order"} <span className="text-xl">→</span>
     </button>
   </div>
 </div>
