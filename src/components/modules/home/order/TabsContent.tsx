@@ -167,7 +167,7 @@ const COLORS: { key: ColorKey; label: string; price: number; swatch: string }[] 
 
 export function TabChooseMetal({ state, onChange }: { state: CardState; onChange: (p: Partial<CardState>) => void }) {
   return (
-    <div className="grid grid-cols-2 gap-8 pt-4">
+    <div className="grid lg:grid-cols-2 gap-8 pt-4">
       {/* Color Column */}
       <div className="space-y-4">
         <Label className="text-sm font-medium text-zinc-400">Color</Label>
