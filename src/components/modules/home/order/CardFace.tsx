@@ -216,7 +216,7 @@ export default function CardFace({
 
       {/* ── Chip (front only) ── */}
       {isFront && (
-        <div className="absolute top-25 left-15" style={{width: "12%", aspectRatio: "56/44" }}>
+        <div className="absolute md:top-25 md:left-15    top-20 left-10" style={{width: "12%", aspectRatio: "56/44" }}>
           <ChipSVG />
         </div>
       )}
@@ -232,7 +232,7 @@ export default function CardFace({
       {/* ── Card number ── */}
       {showNumber && (
         <div
-          className="absolute text-2xl font-extrabold"
+          className="absolute lg:text-2xl font-extrabold"
           style={{
             left: isFront ? "25%" : "6%",
             top: "45%",
@@ -253,7 +253,7 @@ export default function CardFace({
   style={{ left: "30%", top: "60%", color: tc, opacity: 0.7 }}
 >
   {/* VALID THRU */}
-  <div className="flex flex-col text-[8px] leading-[10px] tracking-wide">
+  <div className="flex flex-col text-[8px] leading-2.5 tracking-wide">
     <span>VALID</span>
     <span>THRU</span>
   </div>

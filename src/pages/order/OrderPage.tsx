@@ -50,7 +50,7 @@ export default function OrderPage() {
 
   const [state, setState] = useState<CardState>({
     holderName: "", cardNumberSide: "front", cardNameSide: "front",
-    nameFrontPos: { x: 30, y: 255 }, nameBackPos: { x: 30, y: 255 },
+    nameFrontPos: { x: 30, y: 200 }, nameBackPos: { x: 30, y: 255 },
     logoPos: { x: 260, y: 14 }, comment: "", color: "black",
     logoSize: 40,
     border: "ornate", customTexts: [], logo: null,
