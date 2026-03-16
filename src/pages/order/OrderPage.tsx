@@ -140,9 +140,9 @@ export default function OrderPage() {
               />
             </Link>
    <div className={`open_menu   toggle_menu_button ${menuOpen ? 'active' : ''}`} onClick={()=> setMenuOpen(!menuOpen)}>
-              <div className="bg-black!"></div>
-              <div className="bg-black!"></div>
-              <div className="bg-black!"></div>
+              <div className={`${menuOpen ? 'bg-white!' : 'bg-black!'}`}></div>
+              <div className={`${menuOpen ? 'bg-white!' : 'bg-black!'}`} ></div>
+              <div className={`${menuOpen ? 'bg-white!' : 'bg-black!'}`}></div>
             </div>
       </header>
 
@@ -185,7 +185,7 @@ export default function OrderPage() {
 
 
 
-      <main className="max-w-7xl mx-auto px-6  grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <main className="max-w-7xl mx-auto lg:px-6 px-3  grid grid-cols-1 lg:grid-cols-2 gap-16">
         
         {/* Left - Previews */}
         <div className="space-y-12 mt-5">
@@ -198,9 +198,9 @@ export default function OrderPage() {
         </div>
 
      
-        <div className="flex flex-col h-full border-l-2 ">
+        <div className="flex flex-col h-full lg:border-l-2 ">
   <Tabs defaultValue="info" className="w-full ">
-<TabsList className="w-full py-6 bg-white border border-zinc-200  h-[72px] rounded-[24px] mb-10 shadow-sm m-4">
+<TabsList className="w-full py-6 bg-white border border-zinc-200  h-18 rounded-[24px] mb-10 shadow-sm lg:m-4 ">
   <TabsTrigger 
     value="info" 
     className="flex-1 h-full rounded-[18px] text-[16px] font-bold transition-all tracking-tight
